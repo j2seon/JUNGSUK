@@ -1,0 +1,14 @@
+package chap6;
+//참조형반환타입
+
+
+class Data2 {
+	int x;
+}
+
+
+public class EX6_2_1 {
+	public static void main(String[] args) {
+	}
+
+}
