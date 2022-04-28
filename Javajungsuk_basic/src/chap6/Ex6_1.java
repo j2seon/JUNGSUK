@@ -32,7 +32,6 @@ class MyMath{
 //		return;
 	}
 	
-	
 	long add(long a, long b) {
 		long result = a+b;
 		return result;
@@ -51,6 +50,15 @@ class MyMath{
 		result= a < b ? a:b;
 		return result;
 		//return a < b ? a:b;
+	}
+	
+	// 매개변수의 값이 오류가 없을지를 고민해야한다! 그에대한 대비를 한 메소드를 만드는게 중요함.
+	float divide(int x ,int y ) {//0으로 나누게 되면 오류가 발생하기 때문에 그에 대한 조치 필요
+		if(y==0) {
+			System.out.println("0으로 나눌수 없습니다.");
+			return 0;
+		}
+		return x/(float)y; //리턴되야하는 값이 float임
 	}
 	
 }

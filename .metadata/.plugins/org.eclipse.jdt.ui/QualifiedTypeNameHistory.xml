@@ -9,5 +9,7 @@
     <fullyQualifiedTypeName name="chap7.Circle"/>
     <fullyQualifiedTypeName name="chap7.Point"/>
     <fullyQualifiedTypeName name="chap7.Dvd"/>
+    <fullyQualifiedTypeName name="chap7.MyPoint3D"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="chap7.MyPoint"/>
 </qualifiedTypeNameHistroy>
