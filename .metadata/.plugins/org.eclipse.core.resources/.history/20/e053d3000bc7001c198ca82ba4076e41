@@ -1,0 +1,17 @@
+package chap5;
+
+
+
+//배열은 같은 타입의 변수를 묶은 것
+//참조변수임!! 따라서 변수가 값을 가지고 있는게 아니라 자리값을 가지고 있다.
+
+public class Ex5_1 {
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+	}
+
+}
