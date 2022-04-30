@@ -1,0 +1,29 @@
+package chap6;
+
+
+class Product{
+	static int count = 0;
+	int num;
+	
+	{
+		++count;
+		num=count;
+	}
+
+	public Product() {}
+	
+}
+
+
+
+public class Ex6_29 {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+	}
+
+}

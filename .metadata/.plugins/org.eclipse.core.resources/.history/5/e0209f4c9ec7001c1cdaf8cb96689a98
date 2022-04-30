@@ -1,0 +1,24 @@
+package chap4;
+
+import java.util.Scanner;
+
+public class EX4_15 {
+	public static void main(String[] args) {
+		int answer =0, input=0; // 랜덤한 숫자 넣을 변수 랑 스캐너로 읽을 변수 선언
+		
+		answer= (int)(Math.random()*100)+1; // 1~100까지의 랜덤한 정수를 저장!!! (int)로 형변환했다.
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		do {
+			System.out.print("1~100까지의 정수를 입력하세요!!>>>> ");
+			input = scanner.nextInt();
+			
+			
+			
+		}while(input!=answer); //넣은 값이랑 랜덤한 값이랑 같지 않을때는 계속 반복!
+		
+		
+	}
+
+}

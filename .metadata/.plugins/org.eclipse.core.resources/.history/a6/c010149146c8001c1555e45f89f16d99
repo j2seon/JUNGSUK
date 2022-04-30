@@ -1,0 +1,20 @@
+package chap6;
+
+
+class TData1{
+	int value;
+}
+
+class TData2{
+	int value;
+	TData2(int x ){
+		value=x;
+	}
+}
+public class EX6_23 {
+	public static void main(String[] args) {
+		TData1 d = new TData1();
+		//TData2 dd= new TData2(); 오류가 난다 기본생성자는 매개변수를 가진 생성자를 만들게뫼면 자동 생성되지 않기때문에
+	}
+
+}

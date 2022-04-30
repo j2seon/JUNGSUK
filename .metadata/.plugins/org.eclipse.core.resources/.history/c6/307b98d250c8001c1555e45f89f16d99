@@ -1,0 +1,28 @@
+package chap6;
+
+
+class Documents{
+	static int count =0;
+	String name;
+	
+	public Documents() {
+		
+	}
+
+	public Documents(String name) {
+		this.name = name;
+		System.out.println("¹®¼­"+ this.name+ );
+	}
+	
+	
+	
+	
+}
+
+
+public class Ex6_30 {
+	public static void main(String[] args) {
+
+	}
+
+}

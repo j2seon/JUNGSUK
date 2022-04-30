@@ -1,0 +1,25 @@
+package chap6;
+
+public class Ex6_22 {
+	public static void main(String[] args) {
+		//가변인자
+		String []str = {"100","200","300"};
+		
+		System.out.println(concatenate("-", str));
+		
+		
+		
+	}
+
+	
+	static String concatenate(String a, String...args) {
+		String result="";
+		
+		for(String str : args) {
+			result+=str+a;
+		}
+		return result;
+	}
+	
+}
+

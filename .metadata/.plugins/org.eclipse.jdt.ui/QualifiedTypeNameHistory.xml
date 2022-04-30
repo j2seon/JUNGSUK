@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="chap6.MyMath"/>
     <fullyQualifiedTypeName name="chap6.Data_1"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="chap6.Data1"/>
     <fullyQualifiedTypeName name="chap7.SmartTv"/>
     <fullyQualifiedTypeName name="chap7.Circle"/>
@@ -12,4 +11,8 @@
     <fullyQualifiedTypeName name="chap7.MyPoint3D"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="chap7.MyPoint"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="chap6.Membercall"/>
+    <fullyQualifiedTypeName name="chap6.Mymath"/>
 </qualifiedTypeNameHistroy>
