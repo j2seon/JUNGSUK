@@ -1,0 +1,51 @@
+package chap7;
+
+public class Chap7_3 {
+	public static void main(String[] args) {
+
+	}
+
+}
+
+class Deck{
+	final int CARD_NUM=52; //카드개수
+	Card1 cardArr[] = new Card1[CARD_NUM]; //카드뭉탱이들
+	public Deck() {
+		int n=0;//배열에 들어갈 숫자를 위해 선언
+		//4개의 종류가 13개씩 있도록 숫자 넣어줘야한다!!!
+		for(int i=Card1.KIND_MAX; i>0; i-- ) { //i가 최대 종류인 4일때 0이될때까지 반복! 
+			for(int j=0; j<Card1.NUM_MAX; j++) { //j가 각종류별로 13개씩 있어야하니까 !!!
+				cardArr
+			}
+		}
+	
+	}
+	
+	
+}
+class Card1{
+	static final int KIND_MAX=4; //카드 종류
+	static final int NUM_MAX=13; //카드 종류별 개수
+	
+	static final int SPADE =4; //종류들
+	static final int DIAMOND =3;
+	static final int HEART =2;
+	static final int CLOVER =1;
+	int kind; //종류를 가르키는 static 의 값을 받을 인스턴스 변수
+	int num;
+	//static은 인스턴스 변수로 올수 없어서 !
+	Card1(){
+		this(SPADE, 1); //Card1() 생성자 호출시 새로운 카드객체만들어지고 그 카드는 spade의 1 번 카드를 가진 것! 
+	}
+	public Card1(int kind, int num) {
+		this.kind = kind;
+		this.num = num;
+	}
+	public String toString() {
+		String [] kind= {"","SPADE","DIAMOND","HEART","CLOVER"} ; //kind[0]은 값이 없게 
+		String number = "0123456789XJQK"; //숫자 10은 x
+		return "kind : "+ kind[this.kind]+" , number : "+number.charAt(this.num);
+	}
+	
+	
+}
