@@ -1,0 +1,25 @@
+package chap7;
+
+public class Chap7_18 {
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+		
+	}
+}
+class Parent{
+	int x =100;
+	
+	void method() {
+		System.out.println("Parent Method");
+	}
+}
+class Child {
+	int x = 200;
+	void method() {
+		System.out.println("Child Method");
+	}
+}

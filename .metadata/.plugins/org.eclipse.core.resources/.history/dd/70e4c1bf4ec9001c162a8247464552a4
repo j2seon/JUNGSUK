@@ -1,0 +1,16 @@
+package chap7;
+
+public class Chap7_17 {
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
+class Car4{}
+class FireEngine1 extends Car4{}
