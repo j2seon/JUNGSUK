@@ -1,0 +1,22 @@
+package chap7;
+
+
+class Car_1{
+	String color;
+	int door;
+	
+	void drive() {
+		System.out.println("ºÎ¸ªºÎ¸ª");
+	}
+	void stop() {
+		System.out.println("stop!");
+	} 
+}
+
+
+public class Chap7_15 {
+	public static void main(String[] args) {
+
+	}
+
+}

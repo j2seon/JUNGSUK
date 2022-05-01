@@ -1,0 +1,29 @@
+package chap7;
+//인터페이스 다형성!!
+
+//추상메소드 
+abstract class Unit{
+	int x,y;
+	abstract void move(int x, int y );
+	void stop() {System.out.println("멈춥니다.");}
+}
+
+//인터페이스 
+interface Fightable {
+	void move(int x, int y); //public abstract가 생략되었다.
+	void attack(Fightable f); //public abstract가 생략되었다.
+}
+
+
+
+
+
+
+public class Chap7_25_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

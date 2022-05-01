@@ -1,0 +1,27 @@
+package chap7;
+
+class A{
+	public void method(B b) {
+		b.method();
+	}
+}
+class B{
+	public void method() {
+		System.out.println("B클래스 메소드");
+	}
+}
+class C{
+	public void method() {
+		System.out.println("C클래스 메소드");
+	}
+}
+
+public class InterfaceTest {
+
+	public static void main(String[] args) {
+		A a =new A();
+		a.method(new B()) //A가 B를 사용
+		;
+	}
+
+}
