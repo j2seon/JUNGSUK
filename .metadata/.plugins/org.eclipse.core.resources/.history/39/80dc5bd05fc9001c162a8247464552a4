@@ -1,0 +1,23 @@
+package chap7;
+
+interface Fighterable{}
+interface Movable{
+	void move(int x, int y);
+}
+interface Attackable{
+	void attck(Unit u);
+}
+
+
+class Unit{
+	int Hp;	//Ã¼·Â
+	int x,y; //ÁÂÇ¥
+	
+}
+
+
+public class Chap7_24 {
+	public static void main(String[] args) {
+		
+	}
+}
