@@ -1,0 +1,61 @@
+package chap7;
+
+interface Repairable{}
+
+class Units{
+	int hp;
+	final int max_hp;
+	public Units(int hp) {
+		max_hp=hp; //생성자로 해당인원의 체력을 지정할 수 있게함.
+	}
+}
+
+class GroundUnit extends Units{ //지상군
+	public GroundUnit(int hp) {
+		super(hp);
+	}
+}
+class AirUnit extends Units{//공군
+	public AirUnit(int hp) {
+		super(hp);
+	}
+}
+
+class Tank extends GroundUnit implements Repairable{
+	public Tank() { //탱크체력
+		super(150);
+		hp=max_hp;
+	}
+	public String toString() {
+		return "Tank";
+	}
+}
+class Dropship extends GroundUnit implements Repairable{
+	public Dropship() { //탱크체력
+		super(125);
+		hp=max_hp;
+	}
+	public String toString() {
+		return "Dropship";
+	}
+}
+
+class Marin extends GroundUnit{
+
+	public Marin() {
+		super(40);
+		hp=max_hp;
+	}
+	public String toString() {
+		return "Marin";
+	}
+}
+
+public class Chap7_26 {
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

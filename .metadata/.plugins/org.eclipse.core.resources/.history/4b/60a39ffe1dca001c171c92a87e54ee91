@@ -1,0 +1,25 @@
+package chap7;
+
+public class Chap7_29 {
+
+	public static void main(String[] args) {
+	
+	}
+}
+
+interface I2{
+	public abstract void methodB();
+}
+
+class B2 implements I2{
+	public void methodB() {
+		System.out.println("B2ÀÇ methodB()");
+	}
+}
+
+class InstanceManager{
+	public static I2 getinstance() {
+		return new B2();
+		
+	}
+}

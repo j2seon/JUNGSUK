@@ -1,0 +1,25 @@
+package chap7;
+
+interface Repairable{}
+
+class Units{
+	int hp;
+	final int max_hp;
+	public Unit(int hp) {
+		max_hp=hp; //생성자로 해당인원의 체력을 지정할 수 있게함.
+	}
+}
+
+class GroundUnit extends Unit{//지상군
+	public GroundUnit(int hp) {
+		super(hp);
+	} 
+}
+
+
+public class Chap7_26 {
+	public static void main(String[] args) {
+
+	}
+
+}

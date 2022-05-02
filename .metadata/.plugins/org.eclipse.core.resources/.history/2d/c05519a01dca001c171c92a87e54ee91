@@ -1,0 +1,12 @@
+package chap7;
+
+public class Chap7_29 {
+
+	public static void main(String[] args) {
+	
+	}
+}
+
+interface I2{
+	public abstract void methodB();
+}

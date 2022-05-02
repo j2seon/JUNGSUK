@@ -1,0 +1,25 @@
+package chap7;
+
+public class Chap7_29 {
+
+	public static void main(String[] args) {
+	I2 i = InstanceManager.getinstance();
+	i.methodB();
+	}
+}
+
+interface I2{
+	public abstract void methodB();
+}
+
+class B2 implements I2{
+	public void methodB() {
+		System.out.println("B2의 methodB()");
+	}
+}
+
+class InstanceManager{
+	public static I2 getinstance() {
+		return new B2(); // 인터페이스를 구현한 B2 클래스를 반환한다. 리턴타입이 인터페이스라는 것은 인터페이스를 구현한 클래스를 반환한다는 것!!!
+	}
+}
