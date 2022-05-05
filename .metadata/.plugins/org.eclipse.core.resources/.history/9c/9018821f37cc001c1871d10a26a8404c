@@ -1,0 +1,56 @@
+package chap11;
+
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Chap11_13 {
+	public static void main(String[] args) {
+		Set set = new TreeSet();
+		
+		for(int i =0; set.size()<6;i++) {
+			int num=(int)(Math.random()*45)+1;
+			set.add(num);
+		}
+		System.out.println(set); //자동으로 정렬된다. 내부에 정렬 요소가 있기 때문 
+		
+		Set set1 = new TreeSet();
+//		
+//		for(int i =0; set1.size()<6;i++) {
+//			set1.add(new Test());
+//		}
+		System.out.println(set1);
+		
+		Set set2 = new TreeSet(new TestComp());
+		set2.add(new ());
+
+//		
+//		for(int i =0; set2.size()<6;i++) {
+//			int num=(int)(Math.random()*45)+1;
+			set2.add(new TestComp());
+			set2.add(new TestComp());
+			set2.add(new TestComp());			
+			set2.add(new TestComp());
+
+//		}
+		System.out.println(set2);
+		
+		
+		
+		
+	}
+}
+class Test implements Comparable{//비교기준이 없기때문에 예외가 발생한다.(Comparable을 구현하지 않을 시!!! 구현하면 가능해진다.)
+	@Override
+	public int compareTo(Object o) {
+		return 0;
+	}}
+
+class TestComp implements Comparator{
+	@Override
+	public int compare(Object o1, Object o2) {
+		return 1; //0으로 두니까 같은 객체로 인식
+					//-1,1로 두니까 다 다른객체로 인식
+	}
+	
+}

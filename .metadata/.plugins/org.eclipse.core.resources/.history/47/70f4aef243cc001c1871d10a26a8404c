@@ -1,0 +1,15 @@
+package chap11;
+
+import java.util.HashMap;
+
+public class Chap11_33 {
+
+	public static void main(String[] args) {
+		String[] data = {"A","K","A","K","D","K","A","K","K","K","Z","D"};
+		
+		HashMap map = new HashMap();
+		
+		
+	}
+
+}

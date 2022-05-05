@@ -1,0 +1,17 @@
+package chap11;
+
+import java.util.HashMap;
+
+public class Chap11_30 {
+
+	public static void main(String[] args) {
+		
+		HashMap map = new HashMap();
+		map.put("myid", "1234");
+		map.put("asdf", "1111");
+		map.put("asdf", "1234");
+		
+		
+	}
+
+}

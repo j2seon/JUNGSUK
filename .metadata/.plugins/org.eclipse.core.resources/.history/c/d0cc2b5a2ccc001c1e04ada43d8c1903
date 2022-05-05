@@ -1,0 +1,14 @@
+package chap11;
+
+import java.util.Arrays;
+
+public class Chap11_19 {
+	public static void main(String[] args) {
+		String []strarr = {"cat", "dog","lion","tiger"};
+		
+		Arrays.sort(strarr);
+		System.out.p
+		rintln(Arrays.toString(strarr));
+		
+	}
+}

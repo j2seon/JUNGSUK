@@ -1,0 +1,18 @@
+package chap11;
+
+import java.util.HashMap;
+
+public class Chap11_31 {
+	public static void main(String[] args) {
+		HashMap map = new HashMap();
+		map.put("김자바", 40);
+		map.put("박자바", 90);
+		map.put("이자바", 80);
+		map.put("김자바", 60);
+		map.put("강자바", 100);
+		map.put("남자바", 90);
+		
+		
+	}
+
+}
