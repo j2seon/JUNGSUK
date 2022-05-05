@@ -1,0 +1,30 @@
+package chap11;
+
+import java.util.HashMap;
+
+public class Chap11_32 {
+	
+	static HashMap phonebook = new HashMap();
+	
+	static void addPhonNo(String groupName,String name,String tel){
+		
+	}
+	
+	
+	
+	
+	static void addGroup(String groupName) {
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+	}
+
+}

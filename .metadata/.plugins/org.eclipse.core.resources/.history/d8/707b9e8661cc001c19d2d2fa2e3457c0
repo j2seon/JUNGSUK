@@ -1,0 +1,23 @@
+package chap12;
+
+public class Chap12_test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class St{
+	String name;
+	int ban;
+	int no;
+	int kor;
+	int eng;
+	int math;
+	
+	
+	
+	
+}

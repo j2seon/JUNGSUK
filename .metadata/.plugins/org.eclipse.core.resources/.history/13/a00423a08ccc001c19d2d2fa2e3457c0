@@ -1,0 +1,73 @@
+package chap11;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class Chap11_32 {
+	
+	static HashMap phonebook = new HashMap();
+	
+	//새로운 그룹 추가하는 메소드
+	static void addGroup(String groupName) {
+		if(!phonebook.containsKey(groupName)) {
+			phonebook.put(groupName, new HashMap());
+		}
+	}
+	
+	static void addPhonNo(String groupName,String name,String tel){
+		addGroup(groupName);//그룹을 추가하면 
+		HashMap group = (HashMap)phonebook.get(groupName); //그룹을 추가한 value 값을 가지고 와서 group변수에 담는다. 현재 valuer값도 hashmap인 상태임!!!
+		phonebook.put(tel, name); // 이름은 겹칠수도 있으니 핸드폰번호를 key값으로 둔다.
+	}
+	static void addPhonNo(String groupName) { //오버로딩을 이용해서 ! 기본값으로 설정
+		addPhonNo("기타", "홍길동", "010-0000-0000");
+	}
+	
+	static void prinlist() {
+		Set set =phonebook.entrySet(); //전체 값을 가지고와야지!! set 타입이니까 set에 담고
+		Iterator it = set.iterator();
+		
+		while(it.hasNext()) {
+			Map.Entry e = (Entry) it.next();
+			
+			Set sub=((HashMap)e.getValue()).entrySet();
+			Iterator subit = sub.iterator();
+			
+			System.out.println(e.getKey()+"["+sub.size()+"]");
+			
+			while(subit.hasNext()) {
+				Map.Entry sube = (Entry) subit.next();
+				String telNo= (String) sube.getKey();
+				String name = (String) sube.getValue();
+				System.out.println(name + " "+telNo);
+			} 
+			System.out.println();
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+	}
+
+}

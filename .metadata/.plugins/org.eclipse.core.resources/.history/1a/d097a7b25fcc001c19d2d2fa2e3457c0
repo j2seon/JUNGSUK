@@ -1,0 +1,17 @@
+package chap12;
+
+import java.util.ArrayList;
+
+
+class Tv{}
+
+public class GenT {
+	public static void main(String[] args) {
+		ArrayList<Tv> list =new ArrayList<Tv>();//Tv만 저장할 수 있다.
+		list.add(new Tv());
+		
+		Tv t = list.get(0);//형변환이 필요없게된다!!!!
+		
+		
+	}
+}
