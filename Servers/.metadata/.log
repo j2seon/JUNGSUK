@@ -1,0 +1,852 @@
+!SESSION 2022-05-06 21:24:09.532 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=17.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.springsource.ide.eclipse.commons.gettingstarted 4 0 2022-05-06 21:24:11.281
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.commons.gettingstarted [1212]
+  Unresolved requirement: Require-Bundle: org.springframework.web
+    -> Bundle-SymbolicName: org.springframework.web; bundle-version="4.3.23.20190313-CI"
+       org.springframework.web [1210]
+         Unresolved requirement: Import-Package: com.caucho.burlap.client; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.burlap.io; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.burlap.server; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.hessian; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.hessian.client; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.hessian.io; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.hessian.server; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.fasterxml.jackson.dataformat.xml; version="[2.0.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.googlecode.protobuf.format; resolution:="optional"
+         Unresolved requirement: Import-Package: com.rometools.rome.feed; resolution:="optional"
+         Unresolved requirement: Import-Package: com.rometools.rome.feed.atom; resolution:="optional"
+         Unresolved requirement: Import-Package: com.rometools.rome.feed.rss; resolution:="optional"
+         Unresolved requirement: Import-Package: com.rometools.rome.io; resolution:="optional"
+         Unresolved requirement: Import-Package: com.squareup.okhttp; resolution:="optional"
+         Unresolved requirement: Import-Package: com.squareup.okhttp.internal.http; resolution:="optional"
+         Unresolved requirement: Import-Package: groovy.lang; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.bootstrap; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.buffer; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.channel; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.channel.nio; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.channel.socket; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.channel.socket.nio; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.handler.codec.http; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.handler.ssl; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.handler.timeout; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.util.concurrent; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.faces.application; version="[1.1.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.faces.component; version="[1.1.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.faces.context; version="[1.1.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.faces.event; version="[1.1.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.portlet; version="[2.0.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: okhttp3; resolution:="optional"
+         Unresolved requirement: Import-Package: okhttp3.internal.http; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.commons.fileupload; version="[1.2.0,2.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.commons.fileupload.disk; version="[1.2.0,2.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.commons.fileupload.servlet; version="[1.2.0,2.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.http.impl.nio.client; version="[4.1.0,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.http.nio.client; version="[4.1.0,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.http.nio.entity; version="[4.1.0,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.log4j; version="[1.2.15,2.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.springframework.oxm; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.core"
+              org.springframework.beans [1207]
+                Unresolved requirement: Import-Package: groovy.lang; resolution:="optional"
+                Unresolved requirement: Import-Package: groovy.xml; resolution:="optional"
+                Unresolved requirement: Import-Package: org.codehaus.groovy.reflection; resolution:="optional"
+                Unresolved requirement: Import-Package: org.codehaus.groovy.runtime; resolution:="optional"
+                Unresolved requirement: Import-Package: org.codehaus.groovy.runtime.callsite; resolution:="optional"
+                Unresolved requirement: Import-Package: org.codehaus.groovy.runtime.typehandling; resolution:="optional"
+         Unresolved requirement: Import-Package: org.springframework.context.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="groovy.lang,org.apache.commons.logging,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.groovy,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.springframework.context,org.springframework.context.event,org.springframework.core,org.springframework.core.convert,org.springframework.core.convert.support,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.lang,org.springframework.util"
+              org.springframework.context [1208]
+                Unresolved requirement: Import-Package: bsh; version="[2.0.0.b4,3.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: com.ibm.websphere.management; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: groovy.lang; version="[1.8.8,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.ejb; version="[2.1.0,4.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.enterprise.concurrent; version="[1.0.0,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.interceptor; version="[3.0.0,4.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.money; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.money.format; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.rmi; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.aspectj.weaver.loadtime; version="[1.7.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.codehaus.groovy.control; version="[1.6.3,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.codehaus.groovy.control.customizers; version="[1.6.3,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.hibernate.validator; version="[4.0.0,5.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.hibernate.validator.messageinterpolation; version="[4.0.0,5.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.hibernate.validator.method; version="[4.0.0,5.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.hibernate.validator.spi.resourceloading; version="[4.0.0,5.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.joda.time; version="[1.6.0,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.joda.time.format; version="[1.6.0,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.ast; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.exceptions; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.javasupport; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.runtime; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.runtime.builtin; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.omg.CORBA; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.expression; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.expression.spel; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.expression.spel.standard; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.expression.spel.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.instrument; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.orm.jpa.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.access; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.access; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory"
+                Unresolved requirement: Import-Package: org.springframework.aop.target; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.target; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.apache.commons.pool,org.apache.commons.pool2,org.springframework.aop,org.springframework.aop.support,org.springframework.beans,org.springframework.beans.factory"
+                     org.springframework.aop [1206]
+                       Unresolved requirement: Import-Package: com.jamonapi; version="[2.4.0,3.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: com.jamonapi.utils; version="[2.4.0,3.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.apache.commons.pool; version="[1.5.3,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.apache.commons.pool.impl; version="[1.5.3,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.apache.commons.pool2; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.apache.commons.pool2.impl; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.bridge; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.lang; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.lang.annotation; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.lang.reflect; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.runtime.internal; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.util; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.ast; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.internal.tools; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.patterns; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.reflect; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.tools; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.core"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.annotation; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.wiring,org.springframework.core,org.springframework.core.annotation,org.springframework.core.type,org.springframework.util"
+                       Unresolved requirement: Import-Package: org.aopalliance.aop; version="[1.0.0,2.0.0)"
+                         -> Export-Package: org.aopalliance.aop; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+                            org.aopalliance [1180]
+                              No resolution report for the bundle.                       Unresolved requirement: Import-Package: org.springframework.beans; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core,org.springframework.core.convert,org.springframework.lang,org.springframework.util"
+                       Unresolved requirement: Import-Package: org.aopalliance.intercept; version="[1.0.0,2.0.0)"
+                         -> Export-Package: org.aopalliance.intercept; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.xml; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.xml; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.xml.parsers,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.w3c.dom,org.xml.sax"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.parsing; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.parsing; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.apache.commons.logging,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.core.io"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.support; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.core,org.springframework.core.convert,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.lang,org.springframework.util"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.config; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.config; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.support,org.springframework.core,org.springframework.core.convert,org.springframework.core.io,org.springframework.core.io.support,org.springframework.util,org.yaml.snakeyaml,org.yaml.snakeyaml.constructor,org.yaml.snakeyaml.nodes"
+                Unresolved requirement: Import-Package: org.aopalliance.aop; version="[1.0.0,2.0.0)"; resolution:="optional"
+                  -> Export-Package: org.aopalliance.aop; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+                Unresolved requirement: Import-Package: org.springframework.beans; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core,org.springframework.core.convert,org.springframework.lang,org.springframework.util"
+                Unresolved requirement: Import-Package: org.aopalliance.intercept; version="[1.0.0,2.0.0)"; resolution:="optional"
+                  -> Export-Package: org.aopalliance.intercept; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+                Unresolved requirement: Import-Package: org.springframework.aop; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.core"
+                Unresolved requirement: Import-Package: org.springframework.aop.scope; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.scope; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop,org.springframework.aop.framework,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.support; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.core,org.springframework.core.convert,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.lang,org.springframework.util"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.core"
+                Unresolved requirement: Import-Package: org.springframework.aop.target.dynamic; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.target.dynamic; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop,org.springframework.beans.factory"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.annotation; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.wiring,org.springframework.core,org.springframework.core.annotation,org.springframework.core.type,org.springframework.util"
+                Unresolved requirement: Import-Package: org.springframework.aop.framework.adapter; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.framework.adapter; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.beans,org.springframework.beans.factory.config"
+                Unresolved requirement: Import-Package: org.springframework.beans.propertyeditors; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.propertyeditors; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core.io,org.springframework.lang"
+                Unresolved requirement: Import-Package: org.springframework.aop.framework; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.framework; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.aop.framework.adapter,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.cglib.transform.impl,org.springframework.core"
+                Unresolved requirement: Import-Package: org.springframework.aop.support.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.support.annotation; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop,org.springframework.aop.support"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.config; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.config; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.support,org.springframework.core,org.springframework.core.convert,org.springframework.core.io,org.springframework.core.io.support,org.springframework.util,org.yaml.snakeyaml,org.yaml.snakeyaml.constructor,org.yaml.snakeyaml.nodes"
+                Unresolved requirement: Import-Package: org.springframework.aop.framework.autoproxy; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.framework.autoproxy; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop,org.springframework.aop.framework,org.springframework.aop.framework.adapter,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.xml; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.xml; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.xml.parsers,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.w3c.dom,org.xml.sax"
+                Unresolved requirement: Import-Package: org.springframework.beans.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.support; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.core.env,org.springframework.core.io,org.springframework.util"
+                Unresolved requirement: Import-Package: org.springframework.aop.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.support; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.beans.factory,org.springframework.core"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.parsing; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.parsing; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.apache.commons.logging,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.core.io"
+                Unresolved requirement: Import-Package: org.springframework.aop.config; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.config; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop.aspectj,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.w3c.dom"
+                Unresolved requirement: Import-Package: org.springframework.beans.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.annotation; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.util"
+                Unresolved requirement: Import-Package: org.springframework.aop.interceptor; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.interceptor; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="com.jamonapi,org.aopalliance.aop,org.aopalliance.intercept,org.apache.commons.logging,org.springframework.aop,org.springframework.aop.support,org.springframework.beans.factory,org.springframework.core,org.springframework.core.task,org.springframework.lang,org.springframework.util"
+                Unresolved requirement: Import-Package: javax.xml.namespace; version="0.0.0"; resolution:="optional"
+                  -> Export-Package: javax.xml.namespace; bundle-symbolic-name="javax.xml.stream"; bundle-version="1.0.1.v201004272200"; version="1.0.1"
+                     javax.xml.stream [646]
+                       No resolution report for the bundle.                Unresolved requirement: Import-Package: org.springframework.beans.factory.groovy; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.groovy; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="groovy.lang,groovy.xml,org.codehaus.groovy.runtime,org.codehaus.groovy.runtime.callsite,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.springframework.core.io,org.springframework.core.io.support"
+         Unresolved requirement: Import-Package: javax.servlet.http; version="[2.4.0,4.0.0)"
+           -> Export-Package: javax.servlet.http; bundle-symbolic-name="javax.servlet"; bundle-version="3.1.0.v201410161800"; version="3.1.0"; uses:="javax.servlet"
+              javax.servlet [1178]
+                Unresolved requirement: Import-Package: javax.servlet; version="3.1.0"
+                  -> Export-Package: javax.servlet; bundle-symbolic-name="org.eclipse.jetty.servlet-api"; bundle-version="4.0.6"; version="4.0.0"; uses:="javax.servlet.annotation,javax.servlet.descriptor"
+                     org.eclipse.jetty.servlet-api [775]
+                Unresolved requirement: Import-Package: javax.servlet.descriptor; version="3.1.0"
+                  -> Export-Package: javax.servlet.descriptor; bundle-symbolic-name="org.eclipse.jetty.servlet-api"; bundle-version="4.0.6"; version="4.0.0"
+         Unresolved requirement: Import-Package: org.springframework.remoting.rmi; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.remoting.rmi; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.naming,org.aopalliance.intercept,org.omg.CORBA,org.springframework.beans.factory,org.springframework.core,org.springframework.jndi,org.springframework.remoting,org.springframework.remoting.support"
+         Unresolved requirement: Import-Package: org.springframework.remoting.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.remoting.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="com.sun.net.httpserver,org.aopalliance.intercept,org.springframework.beans.factory,org.springframework.lang"
+         Unresolved requirement: Import-Package: org.springframework.validation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.validation; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.context.support,org.springframework.core,org.springframework.core.convert,org.springframework.format,org.springframework.lang"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.access; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.access; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory"
+         Unresolved requirement: Import-Package: org.springframework.beans.propertyeditors; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.propertyeditors; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core.io,org.springframework.lang"
+         Unresolved requirement: Import-Package: org.springframework.context.i18n; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context.i18n; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"
+         Unresolved requirement: Import-Package: org.springframework.ui.context.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.ui.context.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans.factory,org.springframework.context,org.springframework.ui.context"
+         Unresolved requirement: Import-Package: org.springframework.aop.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.aop.support; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.beans.factory,org.springframework.core"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.access.el; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.access.el; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.el,org.springframework.beans.factory"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.config; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.config; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.support,org.springframework.core,org.springframework.core.convert,org.springframework.core.io,org.springframework.core.io.support,org.springframework.util,org.yaml.snakeyaml,org.yaml.snakeyaml.constructor,org.yaml.snakeyaml.nodes"
+         Unresolved requirement: Import-Package: javax.servlet.annotation; version="[3.0.0,4.0.0)"; resolution:="optional"
+           -> Export-Package: javax.servlet.annotation; bundle-symbolic-name="javax.servlet"; bundle-version="3.1.0.v201410161800"; version="3.1.0"; uses:="javax.servlet"
+         Unresolved requirement: Import-Package: org.springframework.stereotype; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.stereotype; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"
+         Unresolved requirement: Import-Package: org.springframework.context; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.core,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.util"
+         Unresolved requirement: Import-Package: org.springframework.validation.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.validation.annotation; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"
+         Unresolved requirement: Import-Package: org.springframework.beans; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core,org.springframework.core.convert,org.springframework.lang,org.springframework.util"
+         Unresolved requirement: Import-Package: org.aopalliance.intercept; version="[1.0.0,2.0.0)"
+           -> Export-Package: org.aopalliance.intercept; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+         Unresolved requirement: Import-Package: org.springframework.remoting.soap; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.remoting.soap; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.xml.namespace,org.springframework.remoting"
+         Unresolved requirement: Import-Package: org.springframework.format.support
+           -> Export-Package: org.springframework.format.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans.factory,org.springframework.context,org.springframework.core.convert,org.springframework.core.convert.converter,org.springframework.core.convert.support,org.springframework.format,org.springframework.util"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.annotation; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.wiring,org.springframework.core,org.springframework.core.annotation,org.springframework.core.type,org.springframework.util"
+         Unresolved requirement: Import-Package: org.springframework.context.access; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context.access; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.access,org.springframework.context,org.springframework.jndi"
+         Unresolved requirement: Import-Package: org.springframework.context.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context.annotation; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.management,org.apache.commons.logging,org.springframework.aop,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.annotation,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.cglib.transform,org.springframework.context,org.springframework.context.support,org.springframework.core,org.springframework.core.annotation,org.springframework.core.env,org.springframework.core.io,org.springframework.core.type,org.springframework.core.type.classreading,org.springframework.core.type.filter,org.springframework.instrument.classloading,org.springframework.jmx.export.annotation,org.springframework.jmx.support,org.springframework.objenesis,org.springframework.stereotype,org.springframework.util,org.w3c.dom"
+         Unresolved requirement: Import-Package: org.springframework.aop.framework; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.aop.framework; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.aop.framework.adapter,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.cglib.transform.impl,org.springframework.core"
+         Unresolved requirement: Import-Package: org.springframework.remoting; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.remoting; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core"
+         Unresolved requirement: Import-Package: org.springframework.validation.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.validation.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.ui"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.xml; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.xml; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.xml.parsers,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.w3c.dom,org.xml.sax"
+         Unresolved requirement: Import-Package: javax.xml.stream; version="0.0.0"; resolution:="optional"
+           -> Export-Package: javax.xml.stream; bundle-symbolic-name="javax.xml.stream"; bundle-version="1.0.1.v201004272200"; version="1.0.1"
+         Unresolved requirement: Import-Package: org.springframework.ui; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.ui; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"
+         Unresolved requirement: Import-Package: org.springframework.jndi; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.jndi; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.naming,org.aopalliance.intercept,org.springframework.aop,org.springframework.beans.factory,org.springframework.core,org.springframework.core.env"
+         Unresolved requirement: Import-Package: javax.servlet; version="[2.4.0,4.0.0)"
+           -> Export-Package: javax.servlet; bundle-symbolic-name="javax.servlet"; bundle-version="3.1.0.v201410161800"; version="3.1.0"; uses:="javax.servlet.descriptor,javax.servlet.annotation"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.groovy; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.groovy; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="groovy.lang,groovy.xml,org.codehaus.groovy.runtime,org.codehaus.groovy.runtime.callsite,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.springframework.core.io,org.springframework.core.io.support"
+         Unresolved requirement: Import-Package: org.springframework.ui.context; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.ui.context; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.context"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.support; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.core,org.springframework.core.convert,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.lang,org.springframework.util"
+         Unresolved requirement: Import-Package: org.aopalliance.aop; version="[1.0.0,2.0.0)"
+           -> Export-Package: org.aopalliance.aop; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+         Unresolved requirement: Import-Package: javax.xml.namespace; version="0.0.0"; resolution:="optional"
+           -> Export-Package: javax.xml.namespace; bundle-symbolic-name="javax.xml.stream"; bundle-version="1.0.1.v201004272200"; version="1.0.1"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.equinox.app 0 0 2022-05-06 21:24:11.506
+!MESSAGE Product org.eclipse.epp.package.java.product could not be found.
+
+!ENTRY org.eclipse.jface 2 0 2022-05-06 21:24:55.043
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-06 21:24:55.043
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@70a984c5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@30dabb23,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-06 21:24:55.043
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@40032b7b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5317a7ef,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-06 21:24:55.043
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6fa48ee4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@a422390,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-06 21:24:55.043
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53c39950,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3d056418,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-06 21:24:57.482
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-06 21:24:57.482
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-06 21:24:57.561
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ddj04'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2022-05-06 21:24:58.046
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2022-05-06 21:24:58.047
+!MESSAGE Could not open a broadcast port on: 20080 (port might be in use). Please select a different port number
+
+!ENTRY org.eclipse.php.debug.core 4 4 2022-05-06 21:24:58.050
+!MESSAGE The debug port 10137 is in use. Please select a different port for the debugger.
+
+!ENTRY org.springsource.ide.eclipse.dashboard.ui 4 0 2022-05-06 21:24:58.751
+!MESSAGE Unexpected exception
+!STACK 1
+org.eclipse.ui.PartInitException: Unable to open editor, unknown editor ID: 'org.springsource.ide.eclipse.commons.gettingstarted.dashboard.WelcomeDashboard'
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3155)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$9(WorkbenchPage.java:3112)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3110)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3080)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3063)
+	at org.springsource.ide.eclipse.dashboard.ui.actions.ShowDashboardPageAction$1.runInUIThread(ShowDashboardPageAction.java:77)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.ui 4 0 2022-05-06 21:24:58.753
+!MESSAGE Unable to open editor, unknown editor ID: 'org.springsource.ide.eclipse.commons.gettingstarted.dashboard.WelcomeDashboard'
+
+!ENTRY org.eclipse.ui 2 2 2022-05-06 21:25:19.954
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-05-06 21:25:20.128
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:113)
+	at org.eclipse.swt.graphics.GC.<init>(GC.java:167)
+	at org.eclipse.swt.graphics.GC.<init>(GC.java:135)
+	at org.springsource.ide.eclipse.commons.livexp.ui.DescriptionSection.createContents(DescriptionSection.java:99)
+	at org.springsource.ide.eclipse.commons.livexp.ui.GroupSection.createContents(GroupSection.java:99)
+	at org.springsource.ide.eclipse.commons.livexp.ui.GroupSection.createContents(GroupSection.java:99)
+	at org.springframework.ide.eclipse.boot.livexp.ui.DynamicSection.updateContent(DynamicSection.java:88)
+	at org.springframework.ide.eclipse.boot.livexp.ui.DynamicSection.lambda$0(DynamicSection.java:64)
+	at org.springsource.ide.eclipse.commons.livexp.core.UIValueListener$1.uiGotValue(UIValueListener.java:75)
+	at org.springsource.ide.eclipse.commons.livexp.core.UIValueListener$NotifyingJob.runInUIThread(UIValueListener.java:39)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(WizardShortcutAction.java:102)
+	at org.eclipse.ui.internal.views.helpers.EmptyWorkspaceHelper$1.linkActivated(EmptyWorkspaceHelper.java:282)
+	at org.eclipse.ui.forms.widgets.AbstractHyperlink.handleActivate(AbstractHyperlink.java:215)
+	at org.eclipse.ui.forms.widgets.AbstractHyperlink.handleMouseUp(AbstractHyperlink.java:309)
+	at org.eclipse.ui.forms.widgets.AbstractHyperlink.lambda$3(AbstractHyperlink.java:117)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4060)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3632)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SESSION 2022-05-06 21:25:21.475 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=17.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.springsource.ide.eclipse.commons.gettingstarted 4 0 2022-05-06 21:25:23.314
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.commons.gettingstarted [1212]
+  Unresolved requirement: Require-Bundle: org.springframework.web
+    -> Bundle-SymbolicName: org.springframework.web; bundle-version="4.3.23.20190313-CI"
+       org.springframework.web [1210]
+         Unresolved requirement: Import-Package: com.caucho.burlap.client; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.burlap.io; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.burlap.server; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.hessian; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.hessian.client; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.hessian.io; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.caucho.hessian.server; version="[3.2.1,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.fasterxml.jackson.dataformat.xml; version="[2.0.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: com.googlecode.protobuf.format; resolution:="optional"
+         Unresolved requirement: Import-Package: com.rometools.rome.feed; resolution:="optional"
+         Unresolved requirement: Import-Package: com.rometools.rome.feed.atom; resolution:="optional"
+         Unresolved requirement: Import-Package: com.rometools.rome.feed.rss; resolution:="optional"
+         Unresolved requirement: Import-Package: com.rometools.rome.io; resolution:="optional"
+         Unresolved requirement: Import-Package: com.squareup.okhttp; resolution:="optional"
+         Unresolved requirement: Import-Package: com.squareup.okhttp.internal.http; resolution:="optional"
+         Unresolved requirement: Import-Package: groovy.lang; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.bootstrap; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.buffer; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.channel; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.channel.nio; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.channel.socket; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.channel.socket.nio; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.handler.codec.http; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.handler.ssl; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.handler.timeout; resolution:="optional"
+         Unresolved requirement: Import-Package: io.netty.util.concurrent; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.faces.application; version="[1.1.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.faces.component; version="[1.1.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.faces.context; version="[1.1.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.faces.event; version="[1.1.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: javax.portlet; version="[2.0.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: okhttp3; resolution:="optional"
+         Unresolved requirement: Import-Package: okhttp3.internal.http; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.commons.fileupload; version="[1.2.0,2.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.commons.fileupload.disk; version="[1.2.0,2.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.commons.fileupload.servlet; version="[1.2.0,2.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.http.impl.nio.client; version="[4.1.0,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.http.nio.client; version="[4.1.0,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.http.nio.entity; version="[4.1.0,5.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.apache.log4j; version="[1.2.15,2.0.0)"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.springframework.oxm; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+         Unresolved requirement: Import-Package: org.springframework.format.support
+           -> Export-Package: org.springframework.format.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans.factory,org.springframework.context,org.springframework.core.convert,org.springframework.core.convert.converter,org.springframework.core.convert.support,org.springframework.format,org.springframework.util"
+              org.springframework.context [1208]
+                Unresolved requirement: Import-Package: bsh; version="[2.0.0.b4,3.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: com.ibm.websphere.management; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: groovy.lang; version="[1.8.8,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.ejb; version="[2.1.0,4.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.enterprise.concurrent; version="[1.0.0,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.interceptor; version="[3.0.0,4.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.money; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.money.format; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: javax.rmi; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.aspectj.weaver.loadtime; version="[1.7.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.codehaus.groovy.control; version="[1.6.3,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.codehaus.groovy.control.customizers; version="[1.6.3,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.hibernate.validator; version="[4.0.0,5.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.hibernate.validator.messageinterpolation; version="[4.0.0,5.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.hibernate.validator.method; version="[4.0.0,5.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.hibernate.validator.spi.resourceloading; version="[4.0.0,5.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.joda.time; version="[1.6.0,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.joda.time.format; version="[1.6.0,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.ast; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.exceptions; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.javasupport; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.runtime; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.jruby.runtime.builtin; version="[1.6.5.1,2.0.0)"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.omg.CORBA; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.expression; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.expression.spel; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.expression.spel.standard; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.expression.spel.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.instrument; version="0.0.0"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.orm.jpa.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.support; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.core,org.springframework.core.convert,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.lang,org.springframework.util"
+                     org.springframework.beans [1207]
+                       Unresolved requirement: Import-Package: groovy.lang; resolution:="optional"
+                       Unresolved requirement: Import-Package: groovy.xml; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.codehaus.groovy.reflection; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.codehaus.groovy.runtime; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.codehaus.groovy.runtime.callsite; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.codehaus.groovy.runtime.typehandling; resolution:="optional"
+                Unresolved requirement: Import-Package: org.springframework.aop.framework.autoproxy; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.framework.autoproxy; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop,org.springframework.aop.framework,org.springframework.aop.framework.adapter,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config"
+                     org.springframework.aop [1206]
+                       Unresolved requirement: Import-Package: com.jamonapi; version="[2.4.0,3.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: com.jamonapi.utils; version="[2.4.0,3.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.apache.commons.pool; version="[1.5.3,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.apache.commons.pool.impl; version="[1.5.3,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.apache.commons.pool2; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.apache.commons.pool2.impl; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.bridge; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.lang; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.lang.annotation; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.lang.reflect; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.runtime.internal; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.util; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.ast; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.internal.tools; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.patterns; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.reflect; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aspectj.weaver.tools; version="[1.7.1,2.0.0)"; resolution:="optional"
+                       Unresolved requirement: Import-Package: org.aopalliance.aop; version="[1.0.0,2.0.0)"
+                         -> Export-Package: org.aopalliance.aop; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+                            org.aopalliance [1180]
+                              No resolution report for the bundle.                       Unresolved requirement: Import-Package: org.aopalliance.intercept; version="[1.0.0,2.0.0)"
+                         -> Export-Package: org.aopalliance.intercept; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.support; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.core,org.springframework.core.convert,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.lang,org.springframework.util"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.annotation; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.wiring,org.springframework.core,org.springframework.core.annotation,org.springframework.core.type,org.springframework.util"
+                       Unresolved requirement: Import-Package: org.springframework.beans; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core,org.springframework.core.convert,org.springframework.lang,org.springframework.util"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.parsing; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.parsing; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.apache.commons.logging,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.core.io"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.xml; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.xml; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.xml.parsers,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.w3c.dom,org.xml.sax"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory.config; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory.config; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.support,org.springframework.core,org.springframework.core.convert,org.springframework.core.io,org.springframework.core.io.support,org.springframework.util,org.yaml.snakeyaml,org.yaml.snakeyaml.constructor,org.yaml.snakeyaml.nodes"
+                       Unresolved requirement: Import-Package: org.springframework.beans.factory; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                         -> Export-Package: org.springframework.beans.factory; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.core"
+                Unresolved requirement: Import-Package: org.springframework.aop.interceptor; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.interceptor; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="com.jamonapi,org.aopalliance.aop,org.aopalliance.intercept,org.apache.commons.logging,org.springframework.aop,org.springframework.aop.support,org.springframework.beans.factory,org.springframework.core,org.springframework.core.task,org.springframework.lang,org.springframework.util"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.xml; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.xml; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.xml.parsers,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.w3c.dom,org.xml.sax"
+                Unresolved requirement: Import-Package: org.springframework.aop.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.support; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.beans.factory,org.springframework.core"
+                Unresolved requirement: Import-Package: org.aopalliance.intercept; version="[1.0.0,2.0.0)"; resolution:="optional"
+                  -> Export-Package: org.aopalliance.intercept; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+                Unresolved requirement: Import-Package: org.springframework.aop.framework; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.framework; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.aop.framework.adapter,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.cglib.transform.impl,org.springframework.core"
+                Unresolved requirement: Import-Package: org.springframework.beans.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.support; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.core.env,org.springframework.core.io,org.springframework.util"
+                Unresolved requirement: Import-Package: org.springframework.beans.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.annotation; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.util"
+                Unresolved requirement: Import-Package: org.springframework.aop.scope; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.scope; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop,org.springframework.aop.framework,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.parsing; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.parsing; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.apache.commons.logging,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.core.io"
+                Unresolved requirement: Import-Package: org.springframework.aop.framework.adapter; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.framework.adapter; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.beans,org.springframework.beans.factory.config"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.core"
+                Unresolved requirement: Import-Package: org.springframework.aop.target; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.target; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.apache.commons.pool,org.apache.commons.pool2,org.springframework.aop,org.springframework.aop.support,org.springframework.beans,org.springframework.beans.factory"
+                Unresolved requirement: Import-Package: org.springframework.aop.support.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.support.annotation; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop,org.springframework.aop.support"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.groovy; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.groovy; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="groovy.lang,groovy.xml,org.codehaus.groovy.runtime,org.codehaus.groovy.runtime.callsite,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.springframework.core.io,org.springframework.core.io.support"
+                Unresolved requirement: Import-Package: org.springframework.aop.target.dynamic; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.target.dynamic; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop,org.springframework.beans.factory"
+                Unresolved requirement: Import-Package: org.springframework.beans.propertyeditors; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.propertyeditors; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core.io,org.springframework.lang"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.config; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.config; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.support,org.springframework.core,org.springframework.core.convert,org.springframework.core.io,org.springframework.core.io.support,org.springframework.util,org.yaml.snakeyaml,org.yaml.snakeyaml.constructor,org.yaml.snakeyaml.nodes"
+                Unresolved requirement: Import-Package: org.springframework.aop; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.core"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.annotation; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.wiring,org.springframework.core,org.springframework.core.annotation,org.springframework.core.type,org.springframework.util"
+                Unresolved requirement: Import-Package: org.springframework.beans.factory.access; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans.factory.access; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory"
+                Unresolved requirement: Import-Package: org.springframework.aop.config; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+                  -> Export-Package: org.springframework.aop.config; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.aop.aspectj,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.w3c.dom"
+                Unresolved requirement: Import-Package: org.aopalliance.aop; version="[1.0.0,2.0.0)"; resolution:="optional"
+                  -> Export-Package: org.aopalliance.aop; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+                Unresolved requirement: Import-Package: org.springframework.beans; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+                  -> Export-Package: org.springframework.beans; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core,org.springframework.core.convert,org.springframework.lang,org.springframework.util"
+                Unresolved requirement: Import-Package: javax.xml.namespace; version="0.0.0"; resolution:="optional"
+                  -> Export-Package: javax.xml.namespace; bundle-symbolic-name="javax.xml.stream"; bundle-version="1.0.1.v201004272200"; version="1.0.1"
+                     javax.xml.stream [646]
+                       No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.beans.factory.config; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.config; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.support,org.springframework.core,org.springframework.core.convert,org.springframework.core.io,org.springframework.core.io.support,org.springframework.util,org.yaml.snakeyaml,org.yaml.snakeyaml.constructor,org.yaml.snakeyaml.nodes"
+         Unresolved requirement: Import-Package: org.springframework.jndi; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.jndi; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.naming,org.aopalliance.intercept,org.springframework.aop,org.springframework.beans.factory,org.springframework.core,org.springframework.core.env"
+         Unresolved requirement: Import-Package: org.springframework.validation.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.validation.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.ui"
+         Unresolved requirement: Import-Package: org.springframework.context.access; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context.access; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.access,org.springframework.context,org.springframework.jndi"
+         Unresolved requirement: Import-Package: org.springframework.validation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.validation; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.context.support,org.springframework.core,org.springframework.core.convert,org.springframework.format,org.springframework.lang"
+         Unresolved requirement: Import-Package: javax.servlet; version="[2.4.0,4.0.0)"
+           -> Export-Package: javax.servlet; bundle-symbolic-name="javax.servlet"; bundle-version="3.1.0.v201410161800"; version="3.1.0"; uses:="javax.servlet.descriptor,javax.servlet.annotation"
+              javax.servlet [1178]
+                Unresolved requirement: Import-Package: javax.servlet; version="3.1.0"
+                  -> Export-Package: javax.servlet; bundle-symbolic-name="org.eclipse.jetty.servlet-api"; bundle-version="4.0.6"; version="4.0.0"; uses:="javax.servlet.annotation,javax.servlet.descriptor"
+                     org.eclipse.jetty.servlet-api [775]
+                Unresolved requirement: Import-Package: javax.servlet.descriptor; version="3.1.0"
+                  -> Export-Package: javax.servlet.descriptor; bundle-symbolic-name="org.eclipse.jetty.servlet-api"; bundle-version="4.0.6"; version="4.0.0"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.access; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.access; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.groovy; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.groovy; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="groovy.lang,groovy.xml,org.codehaus.groovy.runtime,org.codehaus.groovy.runtime.callsite,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.springframework.core.io,org.springframework.core.io.support"
+         Unresolved requirement: Import-Package: org.springframework.aop.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.aop.support; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.beans.factory,org.springframework.core"
+         Unresolved requirement: Import-Package: org.springframework.context; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.core,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.util"
+         Unresolved requirement: Import-Package: org.springframework.remoting.soap; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.remoting.soap; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.xml.namespace,org.springframework.remoting"
+         Unresolved requirement: Import-Package: org.springframework.context.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="groovy.lang,org.apache.commons.logging,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.groovy,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.springframework.context,org.springframework.context.event,org.springframework.core,org.springframework.core.convert,org.springframework.core.convert.support,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.lang,org.springframework.util"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.annotation; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.support,org.springframework.beans.factory.wiring,org.springframework.core,org.springframework.core.annotation,org.springframework.core.type,org.springframework.util"
+         Unresolved requirement: Import-Package: org.springframework.stereotype; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.stereotype; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.xml; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.xml; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.xml.parsers,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.w3c.dom,org.xml.sax"
+         Unresolved requirement: Import-Package: javax.xml.stream; version="0.0.0"; resolution:="optional"
+           -> Export-Package: javax.xml.stream; bundle-symbolic-name="javax.xml.stream"; bundle-version="1.0.1.v201004272200"; version="1.0.1"
+         Unresolved requirement: Import-Package: javax.servlet.http; version="[2.4.0,4.0.0)"
+           -> Export-Package: javax.servlet.http; bundle-symbolic-name="javax.servlet"; bundle-version="3.1.0.v201410161800"; version="3.1.0"; uses:="javax.servlet"
+         Unresolved requirement: Import-Package: org.springframework.remoting.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.remoting.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="com.sun.net.httpserver,org.aopalliance.intercept,org.springframework.beans.factory,org.springframework.lang"
+         Unresolved requirement: Import-Package: javax.xml.namespace; version="0.0.0"; resolution:="optional"
+           -> Export-Package: javax.xml.namespace; bundle-symbolic-name="javax.xml.stream"; bundle-version="1.0.1.v201004272200"; version="1.0.1"
+         Unresolved requirement: Import-Package: org.springframework.ui.context.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.ui.context.support; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans.factory,org.springframework.context,org.springframework.ui.context"
+         Unresolved requirement: Import-Package: org.springframework.ui.context; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.ui.context; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.context"
+         Unresolved requirement: Import-Package: org.aopalliance.intercept; version="[1.0.0,2.0.0)"
+           -> Export-Package: org.aopalliance.intercept; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ui; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.ui; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"
+         Unresolved requirement: Import-Package: org.aopalliance.aop; version="[1.0.0,2.0.0)"
+           -> Export-Package: org.aopalliance.aop; bundle-symbolic-name="org.aopalliance"; bundle-version="1.0.0.v201105210816"; version="1.0.0"
+         Unresolved requirement: Import-Package: org.springframework.context.i18n; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context.i18n; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"
+         Unresolved requirement: Import-Package: org.springframework.aop.framework; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.aop.framework; bundle-symbolic-name="org.springframework.aop"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.aopalliance.aop,org.aopalliance.intercept,org.springframework.aop,org.springframework.aop.framework.adapter,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.cglib.transform.impl,org.springframework.core"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.access.el; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.access.el; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.el,org.springframework.beans.factory"
+         Unresolved requirement: Import-Package: org.springframework.validation.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.validation.annotation; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"
+         Unresolved requirement: Import-Package: org.springframework.beans.propertyeditors; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.propertyeditors; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core.io,org.springframework.lang"
+         Unresolved requirement: Import-Package: org.springframework.remoting; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.remoting; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.beans,org.springframework.core"
+         Unresolved requirement: Import-Package: org.springframework.context.annotation; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.context.annotation; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.management,org.apache.commons.logging,org.springframework.aop,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.annotation,org.springframework.beans.factory.config,org.springframework.beans.factory.parsing,org.springframework.beans.factory.support,org.springframework.beans.factory.xml,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.cglib.transform,org.springframework.context,org.springframework.context.support,org.springframework.core,org.springframework.core.annotation,org.springframework.core.env,org.springframework.core.io,org.springframework.core.type,org.springframework.core.type.classreading,org.springframework.core.type.filter,org.springframework.instrument.classloading,org.springframework.jmx.export.annotation,org.springframework.jmx.support,org.springframework.objenesis,org.springframework.stereotype,org.springframework.util,org.w3c.dom"
+         Unresolved requirement: Import-Package: org.springframework.remoting.rmi; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"; resolution:="optional"
+           -> Export-Package: org.springframework.remoting.rmi; bundle-symbolic-name="org.springframework.context"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.naming,org.aopalliance.intercept,org.omg.CORBA,org.springframework.beans.factory,org.springframework.core,org.springframework.jndi,org.springframework.remoting,org.springframework.remoting.support"
+         Unresolved requirement: Import-Package: org.springframework.beans; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="org.springframework.core,org.springframework.core.convert,org.springframework.lang,org.springframework.util"
+         Unresolved requirement: Import-Package: javax.servlet.annotation; version="[3.0.0,4.0.0)"; resolution:="optional"
+           -> Export-Package: javax.servlet.annotation; bundle-symbolic-name="javax.servlet"; bundle-version="3.1.0.v201410161800"; version="3.1.0"; uses:="javax.servlet"
+         Unresolved requirement: Import-Package: org.springframework.beans.factory.support; version="[4.3.23.20190313-CI,4.3.23.20190313-CI]"
+           -> Export-Package: org.springframework.beans.factory.support; bundle-symbolic-name="org.springframework.beans"; bundle-version="4.3.23.20190313-CI"; version="4.3.23.20190313-CI"; uses:="javax.inject,org.springframework.beans,org.springframework.beans.factory,org.springframework.beans.factory.config,org.springframework.cglib.core,org.springframework.cglib.proxy,org.springframework.core,org.springframework.core.convert,org.springframework.core.env,org.springframework.core.io,org.springframework.core.io.support,org.springframework.lang,org.springframework.util"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.lambda$1(ModuleContainer.java:1834)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1829)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1775)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1739)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:339)
+
+!ENTRY org.eclipse.equinox.app 0 0 2022-05-06 21:25:23.444
+!MESSAGE Product org.eclipse.epp.package.java.product could not be found.
+
+!ENTRY org.eclipse.jface 2 0 2022-05-06 21:25:25.698
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-06 21:25:25.699
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@381d7c4c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e3689e7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-06 21:25:25.699
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@259f0fdb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@655d5285,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-06 21:25:25.699
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@36f1bd7e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1c2273f6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-06 21:25:25.699
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@411e567e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4e58eda2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-06 21:25:28.995
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-06 21:25:28.996
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-06 21:25:29.057
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ddj04'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2022-05-06 21:25:29.398
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2022-05-06 21:25:29.399
+!MESSAGE Could not open a broadcast port on: 20080 (port might be in use). Please select a different port number
+
+!ENTRY org.eclipse.php.debug.core 4 4 2022-05-06 21:25:29.403
+!MESSAGE The debug port 10137 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.ui 2 2 2022-05-06 21:25:36.176
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
