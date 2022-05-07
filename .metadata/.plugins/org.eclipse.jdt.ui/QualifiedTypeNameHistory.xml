@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="chap11.TestComp"/>
-    <fullyQualifiedTypeName name="java.util.TreeSet"/>
-    <fullyQualifiedTypeName name="chap11.UpDown"/>
-    <fullyQualifiedTypeName name="java.util.Collection"/>
-    <fullyQualifiedTypeName name="chap12.product"/>
-    <fullyQualifiedTypeName name="chap12.Tv"/>
-    <fullyQualifiedTypeName name="chap12.Audio"/>
-    <fullyQualifiedTypeName name="chap12.St"/>
-    <fullyQualifiedTypeName name="chap12.Eatable"/>
-    <fullyQualifiedTypeName name="chap12.Fruitbox"/>
     <fullyQualifiedTypeName name="chap12.Fruit"/>
     <fullyQualifiedTypeName name="chap12.Apple"/>
     <fullyQualifiedTypeName name="chap12.Grape"/>
     <fullyQualifiedTypeName name="chap12.box"/>
     <fullyQualifiedTypeName name="chap12.box1"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="java.lang.Iterable"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="chap11.person"/>
@@ -58,6 +46,18 @@
     <fullyQualifiedTypeName name="chap7.MyTv2"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="chap7.Deck"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="chap7.Card"/>
+    <fullyQualifiedTypeName name="chap7.Deck"/>
+    <fullyQualifiedTypeName name="chap7.Exercise7_1_1.Deck"/>
+    <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
+    <fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.io.DataInputStream"/>
+    <fullyQualifiedTypeName name="java.io.EOFException"/>
 </qualifiedTypeNameHistroy>
