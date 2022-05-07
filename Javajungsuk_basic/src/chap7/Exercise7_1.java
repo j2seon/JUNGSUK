@@ -57,7 +57,7 @@ class SutdaDeck{
 		}
 	}
 	SutdaCard pick(int index) {//유효성 검사를 안했다..
-		if(index <0|| index>=CARD_NUM)
+		if(index < 0|| index>=CARD_NUM)
 			return null;
 		return cards[index];
 	}
@@ -69,18 +69,18 @@ class SutdaDeck{
 }
 
 class SutdaCard{
-	int num;
-	boolean isKwang;
+	final int NUM;
+	final boolean ISKWANG;
 	public SutdaCard() {
 		this(1, true);
 	}
 	public SutdaCard(int num, boolean isKwang) {
-		this.num = num;
-		this.isKwang = isKwang;
+		this.NUM = num;
+		this.ISKWANG = isKwang;
 	}
 	@Override
 	public String toString() {
-		return num+(isKwang? "K":"");
+		return NUM+(ISKWANG? "K":"");
 	}
 	
 }

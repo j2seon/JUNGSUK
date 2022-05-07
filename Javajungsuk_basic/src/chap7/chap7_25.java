@@ -29,7 +29,7 @@ class HTMLparser implements Parseable{ //Html로 변환되는
 	}
 }
 
-public class chap7_25 {
+public class Chap7_25 {
 	public static void main(String[] args) {
 		Parseable p = ParserManager.getParser("XML"); // ParserManager의 getParser의 반환 타입이 인터페이스룰 구현하는 클래스!
 						// new XMLparser과 같은의미이다.
