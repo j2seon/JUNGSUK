@@ -54,7 +54,11 @@ public class Chap7_1 {
 		stv.channelDown(); 
 		System.out.println("현재 채널은? "+stv.channel +"번");
 
-				
+		String result = "";
+		for(int j=1; j<10; j++) {
+			result+=1+"*"+j+"="+ 1*j;
+		}
+		System.out.println(result);		
 		
 		
 		
