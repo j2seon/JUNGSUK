@@ -13,7 +13,10 @@
 <body>
 <p> 로그인성공했습니다 </p>
 
-<% LoginBean = (LoginBean)request.getAttribute("bean"); %>
+<p> <%
+		LoginBean bean = (LoginBean) request.getAttribute("bean");
+		out.println ("아이디 : " + bean.getId()); 
+		 %> 
 
 
 </body>
