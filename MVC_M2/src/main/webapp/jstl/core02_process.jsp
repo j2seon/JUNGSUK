@@ -1,26 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ taglib prefix ="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	String number = request.getParameter("number");
-	%>
+<%
+	String number = request.getParameter("number"); 
+%>
+
+	 ½ºÅ©¸³Æ®¸´ ÅÂ±×·Î Ãâ·Â :
+	<%= number %> <p>     
 	
-	<!-- ìŠ¤í¬ë¦½íŠ¸ë¦¿ íƒœí¬ë¡œ ì¶œë ¥ -->
-	<%= number %> <br/>
-	
-	<!-- JSTLë¡œ ì¶œë ¥ -->
+	 JSTL·Î Ãâ·Â  : 
+	<c:out value="${param.number}" /> <p>    
 	
 	
-	
+<c:choose>
+	<c:when test="${param.number % 2 == 0 }" >
+		<c:out value = "${param.number}" /> Àº Â¦¼ö ÀÔ´Ï´Ù. 
+	</c:when>
+	<c:when test="${param.number % 2 == 1 }" > 
+		<c:out value = "${param.number}" /> Àº È¦¼ö ÀÔ´Ï´Ù. 
+	</c:when>
+	<c:otherwise>
+		¼ýÀÚ°¡ ¾Æ´Õ´Ï´Ù. 
+	</c:otherwise>
+
+</c:choose>
+
 
 </body>
 </html>
