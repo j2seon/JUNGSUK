@@ -2,8 +2,8 @@ package utils;
 
 public class BoardPage {
     public static String pagingStr(int totalCount, int pageSize, int blockPage,
-            int pageNum, String reqUrl) {
-        String pagingStr = "";
+            int pageNum, String reqUrl) {//값을 넘겨받아서
+        String pagingStr = ""; //전체 페이지출력에 대한 내용이 들어갈 String
 
         // 단계 3 : 전체 페이지 수 계산
         int totalPages = (int) (Math.ceil(((double) totalCount / pageSize)));
@@ -40,6 +40,8 @@ public class BoardPage {
                          + "'>[마지막 페이지]</a>";
         }
 
+        //System.out.println(pagingStr);
+        
         return pagingStr;
     }
 }

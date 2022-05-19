@@ -17,42 +17,43 @@
   </welcome-file-list>
  
   <context-param>
- 	<param-name>OracleDriver</param-name>
- 	<param-value>oracle.jdbc.OracleDriver</param-value>
- </context-param>
+  	<param-name>OracleDriver</param-name>
+  	<param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  
  
   <context-param>
- 	<param-name>OracleURL</param-name>
- 	<param-value>jdbc:oracle:thin:@localhost:1521:xe"</param-value>
- </context-param>
- 
- <context-param>
- 	<param-name>OracleId</param-name>
- 	<param-value>hr2</param-value>
- </context-param>
- 
-  <context-param>
- 	<param-name>OraclePwd</param-name>
- 	<param-value>1234</param-value>
- </context-param>
- 
- <session-config>
+    <param-name>OracleURL</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  
+   <context-param>
+    <param-name>OracleId</param-name>
+  	<param-value>HR2</param-value>
+  </context-param>
+  
+   <context-param>
+    <param-name>OraclePwd</param-name>
+  	<param-value>1234</param-value>
+  </context-param>
+  
+   <session-config>
   	<session-timeout>20</session-timeout>
   </session-config>
   
-   <filter>
+   <!-- 한글 깨짐 방지를 위한 설정 (이 프로젝트의 모든 페이지에 대해서 설정)  -->
+  <filter>
   	<filter-name>SetCharEncoding</filter-name>
   	<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
   		<init-param>
   			<param-name>encoding</param-name>
-  			<param-name>utf-8</param-name>
+  			<param-value>utf-8</param-value>
   		</init-param>
   </filter>
-
- <filter-mapping>
- 	<filter-name>SetCharEncoding</filter-name>
- 	<url-pattern>/*</url-pattern>
- </filter-mapping>
+  <filter-mapping>
+  	<filter-name>SetCharEncoding</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   
   
   
@@ -68,11 +69,12 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>myController</servlet-name>
-  	<url-pattern>/MVC_M2/my.do</url-pattern>
+  	<url-pattern>/mvc_test/my.do</url-pattern>
   </servlet-mapping>
   
+  
  
-  <!-- MVCBoard 글 목록보기 Controller 매핑  -->>
+    <!-- MVCBoard 글목록 보기 Controller 매핑  -->
   <servlet>
   	<servlet-name>MVCBoardList</servlet-name>
   	<servlet-class>model2.mvcboard.ListController</servlet-class>
@@ -81,18 +83,37 @@
   	<servlet-name>MVCBoardList</servlet-name>
   	<url-pattern>/mvcboard/list.do</url-pattern>
   </servlet-mapping>
-  
- 
- <!-- 패이징 처리를 위한 설정(변수값 할당) 출력레코드수 :10개  페이지수 :5 -->
- <context-param>
- 	<param-name>POSTS_PER_PAGE</param-name>
- 	<param-value>10</param-value>
- </context-param>
- 
+    
+  <!-- 페이징 처리를 위한 설정 (변수값 할당) 출력레코드수:10개, 페이지수 : 5 -->
   <context-param>
- 	<param-name>PAGES_PER_PAGE</param-name>
- 	<param-value>5</param-value>
- </context-param>
+  	<param-name>POSTS_PER_PAGE</param-name>
+  	<param-value>10</param-value> 
+  </context-param>
+  
+  <context-param>
+  	<param-name>PAGES_PER_BLOCK</param-name>
+  	<param-value>5</param-value> 
+  </context-param>
+  
+  <!-- 글 내용보기  -->
+   <servlet>
+  	<servlet-name>MVCBoardView</servlet-name>
+  	<servlet-class>model2.mvcboard.ViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MVCBoardView</servlet-name>
+  	<url-pattern>/mvcboard/view.do</url-pattern>
+  </servlet-mapping>
+  
+    <!-- 글 수정 삭제하기   -->
+   <servlet>
+  	<servlet-name>MVCBoardPass</servlet-name>
+  	<servlet-class>model2.mvcboard.PassController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MVCBoardPass</servlet-name>
+  	<url-pattern>/mvcboard/pass.do</url-pattern>
+  </servlet-mapping>
  
   
 </web-app>

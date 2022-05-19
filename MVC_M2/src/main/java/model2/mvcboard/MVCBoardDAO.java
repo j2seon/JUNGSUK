@@ -5,121 +5,276 @@ import java.util.Map;
 import java.util.Vector;
 
 import common.DBConnPool;
+import oracle.net.aso.p;
 
-public class MVCBoardDAO extends DBConnPool{
-
-	//기본생성자 호출시 부모클래스를 호출 ==> db랑 연동이 되겠징?
-	public MVCBoardDAO() {super();} //DBCConnPoll객체의 기본 생성자 호출, DBCP에서 con 객체 활성화
-
-	//검색 조건에 맞는 게시물 갯수를 반환한다.
-	public int selectCount(Map<String, Object> map) {
-		
-		int totalCount = 0; //초기값
-		String query = "select count(*) from mvcboard"; //레코드의 총 개수 , 조건이 없으면 총개수가 나온다.
-			if(map.get("searchWord") != null) { //검색기능을 사용했을 때 where 조건 //검색한 값이 있다면 
-				query += "where" + map.get("serchField") + " " + "like '%" + map.get("serchWord") + "%'";
+public class MVCBoardDAO extends DBConnPool {
+	
+	//기본 생성자 호출시 부모 클래스를 호출 
+	public MVCBoardDAO () {
+		super(); 			//DBConnPool객체의 기본 생성자 호출 , DBCP에서 con 객체 활성화
+	}
+	
+	//검색 조건에 맞는 게시물 개수를 반환합니다. 
+	public int selectCount( Map<String, Object> map ) {
+		int totalCount = 0; 
+		String query = "SELECT COUNT(*) FROM mvcboard";    //레코드의 총갯수 반환 ,  
+			if (map.get("searchWord") != null) {			// 검색기능을 사용했을시 where 
+				query += " Where " + map.get("searchField") + " " + "like '%" + map.get("searchWord") + "%'"; 
 			}
-			
 		try {
-			stmt = con.createStatement();
+			stmt = con.createStatement(); 
 			rs = stmt.executeQuery(query);
-			rs.next();
-			totalCount = rs.getInt(1); //레코드 개수 가져옴
+			rs.next(); 
+			totalCount = rs.getInt(1); 
+			
 		} catch (Exception e) {
-			System.out.println("게시물 카운트 중 예외발생");
+			System.out.println("게시물 카운트중 예외 발생");
 			e.printStackTrace();
 		}
-		
-		return totalCount;
+					
+		return totalCount; 
 	}
 	
-	//검색조건에 맞는 게시물 목록을 반환합니다.
-		//DataBase에서 Select 한 결과 값을 DTO에 담아서 리턴 시켜줌
-	public List<MVCBoardDTO> selectListPage( Map<String,Object> map){ //리스트안에 user객체가 들어간다. 
-		List<MVCBoardDTO> board = new Vector<MVCBoardDTO>(); //인터페이스인 리스트를 vector로 구현하게싸
-		String query =" "
-				+ "select * from ("
-				+ "Select Tb.*, rownum rnum from ( "
-				+ "select * from mvcboard ";
-		
-		if(map.get("searchWord") !=null) { //검색기능을 사용했라면 
-			query += " where "+ map.get("searchField")
-			+"Like '%" + map.get("searchWord")+"%' ";
-		}
-			query += " Order by"
-					+" ) Tb "
-					+") "
-					+" where rnum between ? And ?";
+	
+	
+	
+	//검색 조건에 맞는 게시물 목록을 반환합니다.
+		//DataBase에서 Select 한 결과 값을  DTO에 담아서 리턴 시켜줌.  
+    public List<MVCBoardDTO> selectListPage(Map<String,Object> map) {
+        List<MVCBoardDTO> board = new Vector<MVCBoardDTO>();
+        String query = " "
+                     + "SELECT * FROM ( "
+                     + "    SELECT Tb.*, ROWNUM rNum FROM ( "
+                     + "        SELECT * FROM mvcboard ";
+
+        if (map.get("searchWord") != null)
+        {
+            query += " WHERE " + map.get("searchField")
+                   + " LIKE '%" + map.get("searchWord") + "%' ";
+        }
+
+        query += "        ORDER BY idx DESC "
+               + "    ) Tb "
+               + " ) "
+               + " WHERE rNum BETWEEN ? AND ?";
+
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, map.get("start").toString());
+            psmt.setString(2, map.get("end").toString());
+            rs = psmt.executeQuery();
+
+            while (rs.next()) {
+                MVCBoardDTO dto = new MVCBoardDTO();
+
+                dto.setIdx(rs.getString(1));
+                dto.setName(rs.getString(2));
+                dto.setTitle(rs.getString(3));
+                dto.setContent(rs.getString(4));
+                dto.setPostdate(rs.getDate(5));
+                dto.setOfile(rs.getString(6));
+                dto.setSfile(rs.getString(7));
+                dto.setDowncount(rs.getInt(8));
+                dto.setPass(rs.getString(9));
+                dto.setVisitcount(rs.getInt(10));
+
+                board.add(dto);
+            }
+        }
+        catch (Exception e) {
+            System.out.println("게시물 조회 중 예외 발생");
+            e.printStackTrace();
+        }
+        return board;
+    }
+	
+	
+	
+	//목록 상세검색 (Select ) : 주어진 일련 번호에 해당 하는 값을 DTO 에 담 아 반환합니다. (한페이지 read)
+    //viewController요청을 처리 
+    public MVCBoardDTO selectView(String idx) {
+    	MVCBoardDTO dto = new MVCBoardDTO();
+    	
+    	String query = "SELECT * FROM mvcboard WHERE idx = ?"; 
+    	
+    	try {
+    		psmt = con.prepareStatement(query); 
+    		psmt.setString(1,idx); //매개변수값이 들어감
+    		rs = psmt.executeQuery(); //idx로 넘어온 값을 받는다.
 			
-			
-			try { //pstmt 객체 생성 후 쿼리 실행
-				pstmt = con.prepareStatement(query); //prepareStatement 갹체 생성
-				pstmt.setString(1, map.get("start").toString());
-				pstmt.setString(2, map.get("end").toString());
-				rs = pstmt.executeQuery(); //select한 결과같을 rs에 저장.
-				
-				//rs 의 저장된 값을 DTO에 저장시킨다. ==> DTO 객체를 list에 add
-			while(rs.next()) {
-				MVCBoardDTO dto = new MVCBoardDTO();
-				dto.setIdx(rs.getString(1));
-				dto.setName(rs.getString(2));
-				dto.setTitle(rs.getString(3));
-				dto.setContent(rs.getString(4));
-				dto.setPostdate(rs.getDate(5));
-				dto.setOfile(rs.getString(6));
-				dto.setOfile(rs.getString(7));
-				dto.setDowncount(rs.getInt(8));
-				dto.setPass(rs.getString(9));
-				dto.setVisitcount(rs.getInt(10));
-				
-				board.add(dto); //List에 DB의 rs에서 하나의 레코드값을 dto에 저장하고 
-								//dto를 List에 추가 
-				}
-			}catch (Exception e) {
-				e.printStackTrace();
+    		if (rs.next()) {
+    			dto.setIdx(rs.getString(1));
+    			dto.setName(rs.getString(2));
+    			dto.setTitle(rs.getString(3));
+    			dto.setContent(rs.getString(4));
+    			dto.setPostdate(rs.getDate(5));
+    			dto.setOfile(rs.getString(6));
+    			dto.setSfile(rs.getString(7));
+    			dto.setDowncount(rs.getInt(8));
+    			dto.setPass(rs.getString(9));
+    			dto.setVisitcount(rs.getInt(10));
+    			
 			}
-		return board;	//board는 DTO객체를 저장하고 있다.
+			
+			
+		} catch (Exception e) {
+			System.out.println("게시물 상세정보 출력 중 예외 발생");
+			e.printStackTrace();
+		}
+    	return dto;
+    }
+    
+    
+    //주어진 일련번호에 해당하는 게시물의 조회수를 1 증가시킴
+    public void updateVisitCount(String idx) {
+    	String query = "UPDATE mvcboard SET "
+    			+ " visitcount = visitcount + 1 "
+    			+ " WHERE idx = ?"; 
+
+    	
+    	try {
+    		psmt = con.prepareStatement(query); 
+    		psmt.setString (1, idx); 
+    		psmt.executeUpdate(); 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("게시물 조회수 증가시 예외발생");
+		}
+    }
+    
+	//데이터 삽입 (Insert)
+	public int insertWrite (MVCBoardDTO dto) {
+		int result = 0 ; 
+		try {
+			String query = "INSERT INTO mvcboard ( "
+					+ " idx,name, title, content, ofile,sfile,pass) "
+					+ " VALUES ("
+					+ " seq_board_num.nextval, ?, ?, ?, ?, ?, ?)"; 
+			
+		psmt = con.prepareStatement(query);  //PareparedStatement 객체 생성 
+		
+		psmt.setString(1, dto.getName());
+		psmt.setString(2, dto.getTitle());
+		psmt.setString(3, dto.getContent());
+		psmt.setString(4, dto.getOfile());
+		psmt.setString(5, dto.getSfile());
+		psmt.setString(6, dto.getPass());
+		
+		result = psmt.executeUpdate();  //insert가 성공일때 result > 0   //DB 에 값을 저장 
+		
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+		return result; 		// result : Insert 성공시 > 0 , 실패시 : 0 
 	}
 	
 	
 	
-	//목록 검색(Select) : 주어진 일련변호에 대한 값을 DTO에 담아 반환.(한페이지 read)
 	
 	
-	//데이터 삽입(Insert)
-	public int InsertWrite(MVCBoardDTO dto) {
-		int result = 0;
+	//데이터 수정 (Update)
+	public int updatePost (MVCBoardDTO dto) {
+		int result = 0; 
 		
 		try {
-			String query = "insert into mvcboard ( " 
-						+ "idx, name , title, content, ofile,sfile,pass)"
-						+ "values( "+"seq_board_num.nextval, ?,?,?,?,?,?)";
+			String query ="UPDATE mvcboard "
+					+ " SET title = ? , name = ?, content = ?, ofile = ?, sfile = ? "
+					+ " WHERE idx = ? and pass = ?"; 
 			
-			pstmt = con.prepareStatement(query); //PretaredStatement
-			pstmt.setString(1, dto.getName());
-			pstmt.setNString(2, dto.getContent());
-			pstmt.setString(4, dto.getOfile());
-			pstmt.setString(5,dto.getSfile());
-			pstmt.setString(6, dto.getPass());
+			// 쿼리문 준비
+			psmt = con.prepareStatement(query); 
 			
-			result = pstmt.executeUpdate(); // insert가 실패하면 0 아니면 0보다 큰값 //DB에 값을 저장.
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getName());
+			psmt.setString(3, dto.getContent());
+			psmt.setString(4, dto.getOfile());
+			psmt.setString(5, dto.getSfile());
+			psmt.setString(6, dto.getIdx());
+			psmt.setString(7, dto.getPass()); 
+			
+			result = psmt.executeUpdate();   //update성공시 result 변수의 값이 > 0 		
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("update시 예외발생");
+		}
+		return result ; //실패하면 0 성공은 0보다 큼! 
+	}
+	
+	//데이터 삭제 (delete)
+	public int deletePost(String idx) {
+		int result = 0 ; 
+			
+			try {
+				String query = "DELETE mvcboard WHERE idx = ?"; 
+				psmt = con.prepareStatement(query); 
+				psmt.setString(1, idx);
+				
+				result = psmt.executeUpdate();  //result > 0 삭제 성공, result = 0 : 삭제 실패 
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("delete 시 예외발생");
+			}
+			return result;
 		}
 		
-		return result;
-	} 
+		//다운로드 횟수를 증가시키는 메소드
+		public void downCountPlus (String idx) {
+			String query = "UPDATE mvcboard SET downcount = downcount + 1 "
+					   + " WHERE idx = ?"; 
+			
+			try {
+				psmt = con.prepareStatement(query); 
+				psmt.setString(1, idx);
+				psmt.executeUpdate();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("다룬로트 횟수 증가시 오류발생");
+			}
+			
+		}
+
+		
+		//비밀번호 확인하는 메서드(입력한 비밀번호가 dataBase의 값과 일치하는지 확인하는 메서드)
+		public boolean confirmPassword(String pass, String idx) {
+			boolean isCorr = true;
+				
+			try { //count(*) :레코드개수, id랑 pass 가 일치하면 1이된다 0이면 틀린거지 채
+				String query = "SELECT COUNT(*) FROM mvcboard WHERE pass = ? and idx = ?";
+				psmt = con.prepareStatement(query); 
+				psmt.setString(1, pass);
+				psmt.setString(2, idx);
+				rs = psmt.executeQuery();
+				
+				rs.next();
+				if(rs.getInt(1)==0) {
+					isCorr = false; 
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("비밀번호가 일치하지 않습니다.");
+			}
+			
+			
+			return isCorr;
+		}
+		
+		
+	//데이터 검색 (Select 특정 조건으로) 
 	
 	
 	
-	//데이터 수정(Update)
-	
-	//데이터 삭제(Delete)
-	
-	//데이터 검색(Select 특정조건으로)
 	
 	
 	
 	
+
 }
