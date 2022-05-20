@@ -3,35 +3,42 @@ package model2.mvcboard;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/mvcboard/view.do")
 public class ViewController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//get ìš”ì²­ì‹œ ì²˜ë¦¬ë¸”ë½
-		//System.out.println("ViewController ì •ìƒ ì‘ë™ (get ìš”ì²­)");
-	
-		//ê²Œì‹œë¬¼ ì •ë³´ ë¶ˆëŸ¬ì˜¤ê¸° (1. ì¡°íšŒìˆ˜ ì¦ê°€, 2. ê²Œì‹œë¬¼ ì •ë³´ ê°€ì ¸ì˜¤ê¸° )
+		//Get ¿äÃ»½Ã Ã³¸® ºí¶ô
+		//System.out.println("ViewController ÀÛµ¿ÀßµÊ (Get ¿äÃ» Ã³¸®)");
+		
+		//°Ô½Ã¹° Á¤º¸ ºÒ·¯ ¿À±â ( 1. Á¶È¸¼ö Áõ°¡, 2.°Ô½Ã¹° Á¤º¸ °¡Á®¿À±â) 
 		MVCBoardDAO dao = new MVCBoardDAO(); 
+		
 		String idx = req.getParameter("idx"); 
 		
-		//ì¡°íšŒìˆ˜ ì¦ê°€
+		//Á¶È¸¼ö Áõ°¡ 
 		dao.updateVisitCount(idx); 
 		
-		//ê²Œì‹œë¬¼ì˜ ìì„¸í•œ ì •ë³´ ê°’ ê°€ì ¸ì˜¤ê¸° 
+		//°Ô½Ã¹°ÀÇ ÀÚ¼¼ÇÑ Á¤º¸ °ª °¡Á®¿À±â
 		MVCBoardDTO dto = dao.selectView(idx); 
-		dao.close();   //ê°ì²´ ë°˜ë‚© 
+		dao.close();   //°´Ã¼ ¹İ³³ 
 		
-		//DataBaseì˜ content ì»¬ëŸ¼ì˜ \r\n ì„ "<br /> íƒœê·¸ë¡œ ë³€í™˜
-		//ë””ë¹„ì—ì„œ ê°€ì ¸ì˜¬ ë•ŒëŠ” í•œë¼ì¸ìœ¼ë¡œ ë“¤ì–´ê°€ê¸°ë•Œë¬¸ì— ì—”í„°ë¥¼ í•´ì¤„ í•„ìš”ê°€ ìˆë‹¤.
+		//DataBase ÀÇ  content ÄÃ·³ÀÇ \r\n  <== <<Enter>>À» "<br /> ÅÂ±×·Î º¯È¯ 
 		dto.setContent(dto.getContent().replaceAll("\r\n", "<br/>"));
 		
-		//ê²Œì‹œë¬¼(dto) ê°ì²´ë¥¼ view í˜ì´ì§€ë¡œ ì „ë‹¬í•˜ê¸° ìœ„í•œ ë³€ìˆ˜ ì €ì¥.
+		//°Ô½Ã¹° (dto) °´Ã¼¸¦ viewÆäÀÌÁö·Î Àü´ŞÇÏ±â º¯¼ö °ª ÀúÀå 
 		req.setAttribute("dto", dto); 
 		req.getRequestDispatcher("/mvcboard/View.jsp").forward(req, resp); 
+		
+		
+		
+		
+		
 		
 		
 		
@@ -41,12 +48,9 @@ public class ViewController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//post ìš”ì²­ì‹œ ì²˜ë¦¬ë¸”ë½
-		System.out.println("ViewController ì •ìƒ ì‘ë™ (post ìš”ì²­ )");
-
+		// Post ¿äÃ»½Ã Ã³¸® ºí¶ô
+		//System.out.println("ViewController ÀÛµ¿ÀßµÊ (Post ¿äÃ» Ã³¸®)");
 	}
 	
 	
-	
-
 }

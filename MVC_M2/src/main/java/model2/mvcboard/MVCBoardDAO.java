@@ -5,20 +5,19 @@ import java.util.Map;
 import java.util.Vector;
 
 import common.DBConnPool;
-import oracle.net.aso.p;
 
 public class MVCBoardDAO extends DBConnPool {
 	
-	//ê¸°ë³¸ ìƒì„±ì í˜¸ì¶œì‹œ ë¶€ëª¨ í´ë˜ìŠ¤ë¥¼ í˜¸ì¶œ 
+	//±âº» »ı¼ºÀÚ È£Ãâ½Ã ºÎ¸ğ Å¬·¡½º¸¦ È£Ãâ 
 	public MVCBoardDAO () {
-		super(); 			//DBConnPoolê°ì²´ì˜ ê¸°ë³¸ ìƒì„±ì í˜¸ì¶œ , DBCPì—ì„œ con ê°ì²´ í™œì„±í™”
+		super(); 			//DBConnPool°´Ã¼ÀÇ ±âº» »ı¼ºÀÚ È£Ãâ , DBCP¿¡¼­ con °´Ã¼ È°¼ºÈ­
 	}
 	
-	//ê²€ìƒ‰ ì¡°ê±´ì— ë§ëŠ” ê²Œì‹œë¬¼ ê°œìˆ˜ë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤. 
+	//°Ë»ö Á¶°Ç¿¡ ¸Â´Â °Ô½Ã¹° °³¼ö¸¦ ¹İÈ¯ÇÕ´Ï´Ù. 
 	public int selectCount( Map<String, Object> map ) {
 		int totalCount = 0; 
-		String query = "SELECT COUNT(*) FROM mvcboard";    //ë ˆì½”ë“œì˜ ì´ê°¯ìˆ˜ ë°˜í™˜ ,  
-			if (map.get("searchWord") != null) {			// ê²€ìƒ‰ê¸°ëŠ¥ì„ ì‚¬ìš©í–ˆì„ì‹œ where 
+		String query = "SELECT COUNT(*) FROM mvcboard";    //·¹ÄÚµåÀÇ ÃÑ°¹¼ö ¹İÈ¯ ,  
+			if (map.get("searchWord") != null) {			// °Ë»ö±â´ÉÀ» »ç¿ëÇßÀ»½Ã where 
 				query += " Where " + map.get("searchField") + " " + "like '%" + map.get("searchWord") + "%'"; 
 			}
 		try {
@@ -28,7 +27,7 @@ public class MVCBoardDAO extends DBConnPool {
 			totalCount = rs.getInt(1); 
 			
 		} catch (Exception e) {
-			System.out.println("ê²Œì‹œë¬¼ ì¹´ìš´íŠ¸ì¤‘ ì˜ˆì™¸ ë°œìƒ");
+			System.out.println("°Ô½Ã¹° Ä«¿îÆ®Áß ¿¹¿Ü ¹ß»ı");
 			e.printStackTrace();
 		}
 					
@@ -38,8 +37,8 @@ public class MVCBoardDAO extends DBConnPool {
 	
 	
 	
-	//ê²€ìƒ‰ ì¡°ê±´ì— ë§ëŠ” ê²Œì‹œë¬¼ ëª©ë¡ì„ ë°˜í™˜í•©ë‹ˆë‹¤.
-		//DataBaseì—ì„œ Select í•œ ê²°ê³¼ ê°’ì„  DTOì— ë‹´ì•„ì„œ ë¦¬í„´ ì‹œì¼œì¤Œ.  
+	//°Ë»ö Á¶°Ç¿¡ ¸Â´Â °Ô½Ã¹° ¸ñ·ÏÀ» ¹İÈ¯ÇÕ´Ï´Ù.
+		//DataBase¿¡¼­ Select ÇÑ °á°ú °ªÀ»  DTO¿¡ ´ã¾Æ¼­ ¸®ÅÏ ½ÃÄÑÁÜ.  
     public List<MVCBoardDTO> selectListPage(Map<String,Object> map) {
         List<MVCBoardDTO> board = new Vector<MVCBoardDTO>();
         String query = " "
@@ -57,6 +56,8 @@ public class MVCBoardDAO extends DBConnPool {
                + "    ) Tb "
                + " ) "
                + " WHERE rNum BETWEEN ? AND ?";
+        
+        System.out.println(query);  //ÄÜ¼Ö¿¡ ÀüÃ¼ Äõ¸® Ãâ·Â 
 
         try {
             psmt = con.prepareStatement(query);
@@ -82,7 +83,7 @@ public class MVCBoardDAO extends DBConnPool {
             }
         }
         catch (Exception e) {
-            System.out.println("ê²Œì‹œë¬¼ ì¡°íšŒ ì¤‘ ì˜ˆì™¸ ë°œìƒ");
+            System.out.println("°Ô½Ã¹° Á¶È¸ Áß ¿¹¿Ü ¹ß»ı");
             e.printStackTrace();
         }
         return board;
@@ -90,18 +91,19 @@ public class MVCBoardDAO extends DBConnPool {
 	
 	
 	
-	//ëª©ë¡ ìƒì„¸ê²€ìƒ‰ (Select ) : ì£¼ì–´ì§„ ì¼ë ¨ ë²ˆí˜¸ì— í•´ë‹¹ í•˜ëŠ” ê°’ì„ DTO ì— ë‹´ ì•„ ë°˜í™˜í•©ë‹ˆë‹¤. (í•œí˜ì´ì§€ read)
-    //viewControllerìš”ì²­ì„ ì²˜ë¦¬ 
+	
+	//¸ñ·Ï »ó¼¼ °Ë»ö (Select ) : ÁÖ¾îÁø ÀÏ·Ã ¹øÈ£¿¡ ÇØ´ç ÇÏ´Â °ªÀ» DTO ¿¡ ´ã ¾Æ ¹İÈ¯ÇÕ´Ï´Ù. (ÇÑÆäÀÌÁö read)
+    //ViewController ¿äÃ»À» Ã³¸® 
+    
     public MVCBoardDTO selectView(String idx) {
     	MVCBoardDTO dto = new MVCBoardDTO();
-    	
     	String query = "SELECT * FROM mvcboard WHERE idx = ?"; 
     	
     	try {
     		psmt = con.prepareStatement(query); 
-    		psmt.setString(1,idx); //ë§¤ê°œë³€ìˆ˜ê°’ì´ ë“¤ì–´ê°
-    		rs = psmt.executeQuery(); //idxë¡œ ë„˜ì–´ì˜¨ ê°’ì„ ë°›ëŠ”ë‹¤.
-			
+    		psmt.setString(1,idx); 
+    		rs = psmt.executeQuery(); 
+    		
     		if (rs.next()) {
     			dto.setIdx(rs.getString(1));
     			dto.setName(rs.getString(2));
@@ -114,36 +116,39 @@ public class MVCBoardDAO extends DBConnPool {
     			dto.setPass(rs.getString(9));
     			dto.setVisitcount(rs.getInt(10));
     			
-			}
-			
-			
-		} catch (Exception e) {
-			System.out.println("ê²Œì‹œë¬¼ ìƒì„¸ì •ë³´ ì¶œë ¥ ì¤‘ ì˜ˆì™¸ ë°œìƒ");
-			e.printStackTrace();
-		}
-    	return dto;
+    		}
+    		
+    	}catch (Exception e) {
+    		System.out.println("°Ô½Ã¹° »ó¼¼Á¤º¸ Ãâ·ÂÁß ¿¹¿Ü ¹ß»ı");
+    		e.printStackTrace();
+    	}
+    	
+    	return dto; 
     }
     
-    
-    //ì£¼ì–´ì§„ ì¼ë ¨ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ê²Œì‹œë¬¼ì˜ ì¡°íšŒìˆ˜ë¥¼ 1 ì¦ê°€ì‹œí‚´
+    //ÁÖ¾îÁø ÀÏ·Ã ¹øÈ£¿¡ ÇØ´çÇÏ´Â °Ô½Ã¹°ÀÇ Á¶È¸¼ö¸¦ 1 Áõ°¡ ½ÃÅ´. 
     public void updateVisitCount(String idx) {
     	String query = "UPDATE mvcboard SET "
     			+ " visitcount = visitcount + 1 "
     			+ " WHERE idx = ?"; 
-
     	
     	try {
     		psmt = con.prepareStatement(query); 
     		psmt.setString (1, idx); 
     		psmt.executeUpdate(); 
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("ê²Œì‹œë¬¼ ì¡°íšŒìˆ˜ ì¦ê°€ì‹œ ì˜ˆì™¸ë°œìƒ");
-		}
+    		
+    	}catch (Exception e) {
+    		e.printStackTrace();
+    		System.out.println("°Ô½Ã¹° Á¶È¸¼ö Áõ°¡½Ã ¿¹¿Ü ¹ß»ı");
+    	}    	
     }
     
-	//ë°ì´í„° ì‚½ì… (Insert)
+    
+    
+    
+    
+	
+	//µ¥ÀÌÅÍ »ğÀÔ (Insert)
 	public int insertWrite (MVCBoardDTO dto) {
 		int result = 0 ; 
 		try {
@@ -152,7 +157,7 @@ public class MVCBoardDAO extends DBConnPool {
 					+ " VALUES ("
 					+ " seq_board_num.nextval, ?, ?, ?, ?, ?, ?)"; 
 			
-		psmt = con.prepareStatement(query);  //PareparedStatement ê°ì²´ ìƒì„± 
+		psmt = con.prepareStatement(query);  //PareparedStatement °´Ã¼ »ı¼º 
 		
 		psmt.setString(1, dto.getName());
 		psmt.setString(2, dto.getTitle());
@@ -161,30 +166,26 @@ public class MVCBoardDAO extends DBConnPool {
 		psmt.setString(5, dto.getSfile());
 		psmt.setString(6, dto.getPass());
 		
-		result = psmt.executeUpdate();  //insertê°€ ì„±ê³µì¼ë•Œ result > 0   //DB ì— ê°’ì„ ì €ì¥ 
+		result = psmt.executeUpdate();  //insert°¡ ¼º°øÀÏ¶§ result > 0   //DB ¿¡ °ªÀ» ÀúÀå 
 		
 		
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 			
-		return result; 		// result : Insert ì„±ê³µì‹œ > 0 , ì‹¤íŒ¨ì‹œ : 0 
+		return result; 		// result : Insert ¼º°ø½Ã > 0 , ½ÇÆĞ½Ã : 0 
 	}
 	
 	
-	
-	
-	
-	//ë°ì´í„° ìˆ˜ì • (Update)
+	//µ¥ÀÌÅÍ ¼öÁ¤ (Update)
 	public int updatePost (MVCBoardDTO dto) {
-		int result = 0; 
+		int result = 0 ; 
 		
 		try {
-			String query ="UPDATE mvcboard "
-					+ " SET title = ? , name = ?, content = ?, ofile = ?, sfile = ? "
-					+ " WHERE idx = ? and pass = ?"; 
-			
-			// ì¿¼ë¦¬ë¬¸ ì¤€ë¹„
+			String query =    "UPDATE mvcboard "
+							+ " SET title = ? , name = ?, content = ?, ofile = ?, sfile = ? "
+							+ " WHERE idx = ? and pass = ?"; 
+			//Äõ¸®¹® ÁØºñ 
 			psmt = con.prepareStatement(query); 
 			
 			psmt.setString(1, dto.getTitle());
@@ -195,80 +196,79 @@ public class MVCBoardDAO extends DBConnPool {
 			psmt.setString(6, dto.getIdx());
 			psmt.setString(7, dto.getPass()); 
 			
-			result = psmt.executeUpdate();   //updateì„±ê³µì‹œ result ë³€ìˆ˜ì˜ ê°’ì´ > 0 		
+			result = psmt.executeUpdate();   //update¼º°ø½Ã result º¯¼öÀÇ °ªÀÌ > 0 	
 			
-			
-		} catch (Exception e) {
+			//System.out.println("result : " + result);
+					
+		}catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("updateì‹œ ì˜ˆì™¸ë°œìƒ");
+			System.out.println("Update½Ã ¿¹¿Ü¹ß»ı");
 		}
-		return result ; //ì‹¤íŒ¨í•˜ë©´ 0 ì„±ê³µì€ 0ë³´ë‹¤ í¼! 
+				
+		return result ;   //result > 0 : ¼öÁ¤ ¼º°ø, result = 0 : ¼öÁ¤ ½ÇÆĞ 		
 	}
+
 	
-	//ë°ì´í„° ì‚­ì œ (delete)
+	//µ¥ÀÌÅÍ »èÁ¦ (delete)
 	public int deletePost(String idx) {
 		int result = 0 ; 
-			
-			try {
-				String query = "DELETE mvcboard WHERE idx = ?"; 
-				psmt = con.prepareStatement(query); 
-				psmt.setString(1, idx);
-				
-				result = psmt.executeUpdate();  //result > 0 ì‚­ì œ ì„±ê³µ, result = 0 : ì‚­ì œ ì‹¤íŒ¨ 
-				
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("delete ì‹œ ì˜ˆì™¸ë°œìƒ");
-			}
-			return result;
-		}
 		
-		//ë‹¤ìš´ë¡œë“œ íšŸìˆ˜ë¥¼ ì¦ê°€ì‹œí‚¤ëŠ” ë©”ì†Œë“œ
-		public void downCountPlus (String idx) {
-			String query = "UPDATE mvcboard SET downcount = downcount + 1 "
+		try {
+			String query = "DELETE mvcboard WHERE idx = ?"; 
+			psmt = con.prepareStatement(query); 
+			psmt.setString(1, idx);
+			
+			result = psmt.executeUpdate();  //result > 0 »èÁ¦ ¼º°ø, result = 0 : »èÁ¦ ½ÇÆĞ 
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("delete ½Ã ¿¹¿Ü ¹ß»ı ");
+		}
+				
+		return result; 				
+	}
+	
+	
+	
+	//´Ù¿î ·Îµå È½¼ö¸¦ Áõ°¡½ÃÅ°´Â ¸Ş¼Òµå 
+	public void downCountPlus (String idx) {
+		String query = "UPDATE mvcboard SET downcount = downcount + 1 "
 					   + " WHERE idx = ?"; 
+		
+		try {
+			psmt = con.prepareStatement(query); 
+			psmt.setString(1, idx);
+			psmt.executeUpdate();
 			
-			try {
-				psmt = con.prepareStatement(query); 
-				psmt.setString(1, idx);
-				psmt.executeUpdate();
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("ë‹¤ë£¬ë¡œíŠ¸ íšŸìˆ˜ ì¦ê°€ì‹œ ì˜¤ë¥˜ë°œìƒ");
-			}
-			
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("´Ù¿î·Îµå È½¼ö Áõ°¡½Ã ¿À·ù ¹ß»ı");
 		}
-
-		
-		//ë¹„ë°€ë²ˆí˜¸ í™•ì¸í•˜ëŠ” ë©”ì„œë“œ(ì…ë ¥í•œ ë¹„ë°€ë²ˆí˜¸ê°€ dataBaseì˜ ê°’ê³¼ ì¼ì¹˜í•˜ëŠ”ì§€ í™•ì¸í•˜ëŠ” ë©”ì„œë“œ)
-		public boolean confirmPassword(String pass, String idx) {
-			boolean isCorr = true;
-				
-			try { //count(*) :ë ˆì½”ë“œê°œìˆ˜, idë‘ pass ê°€ ì¼ì¹˜í•˜ë©´ 1ì´ëœë‹¤ 0ì´ë©´ í‹€ë¦°ê±°ì§€ ì±„
-				String query = "SELECT COUNT(*) FROM mvcboard WHERE pass = ? and idx = ?";
-				psmt = con.prepareStatement(query); 
-				psmt.setString(1, pass);
-				psmt.setString(2, idx);
-				rs = psmt.executeQuery();
-				
-				rs.next();
-				if(rs.getInt(1)==0) {
-					isCorr = false; 
-				}
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+	}
+	
+	// ºñ¹Ğ¹øÈ£¸¦ È®ÀÎ ÇÏ´Â ¸Ş¼Òµå (ÀÔ·ÂÇÑ ºñ¹Ğ ¹øÈ£°¡ DataBase ÀÇ °ª°ú ÀÏÄ¡ÇÏ´ÂÁö È®ÀÎ 
+	public boolean confirmPassword(String pass, String idx) {
+		boolean isCorr = true; 
+		try {
+				//COUNT(*) = 1 : ·¹ÄÚµå°¡ Á¸ÀçÇÏ¸é : client¿¡¼­ ³Ñ±ä pass , idx DB¿¡ Á¸Àç 
+				//COUNT(*) = 0 : ·¹ÄÚµå°¡ Á¸ÀçÇÏÁö ¾ÊÀ¸¸é client¿¡¼­ ³Ñ±ä °ªÀÌ DB¿¡ Á¸ÀçÇÏÁö ¾Ê´Â´Ù. 
+			String query = "SELECT COUNT(*) FROM mvcboard WHERE pass = ? and idx = ?";
+			psmt = con.prepareStatement(query); 
+			psmt.setString(1, pass);
+			psmt.setString(2, idx);
+			rs = psmt.executeQuery(); 
+			
+			rs.next(); 	
+			if (rs.getInt(1) == 0) {
+				isCorr = false; 
 			}
-			
-			
-			return isCorr;
-		}
-		
-		
-	//ë°ì´í„° ê²€ìƒ‰ (Select íŠ¹ì • ì¡°ê±´ìœ¼ë¡œ) 
+					
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("ºñ¹Ğ¹øÈ£ È®ÀÎ½Ã ¿¹¿Ü ¹ß»ı");
+		}		
+		return isCorr; 
+	}
 	
 	
 	

@@ -3,26 +3,76 @@ package model2.mvcboard;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import utils.JSFunction;
 
-public class PassController extends HttpServlet{
+
+@WebServlet("/mvcboard/pass.do")
+public class PassController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// get ìš”ì²­ì‹œ ì²˜ë¦¬
-		//mode ë³€ìˆ˜ì— : edit <== ê¸€ìˆ˜ì •, delete <===ê¸€ì‚­ì œ
+		// Get ¿äÃ»½Ã Ã³¸®
+		/*
+		System.out.println("PassController Á¤»óÀÛµ¿ ");
+		String mode = req.getParameter("mode"); 
+		System.out.println( "mode º¯¼öÀÇ °ª : " + mode);
+		*/
+		
+		//mode : edit <== ±Û¼öÁ¤,   mode : delete <== ±Û»èÁ¦ 
 		req.setAttribute("mode", req.getParameter("mode"));
 		req.getRequestDispatcher("/mvcboard/Pass.jsp").forward(req, resp);
+		
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// post ìš”ì²­ì‹œ ì²˜ë¦¬
+		// Post ¿äÃ»½Ã Ã³¸® 
+		
+		//pass.jsp (ºä) ¿¡¼­ Àü¼ÛÇÑ º¯¼ö 3°³ 
+		String idx = req.getParameter("idx"); 
+		String mode = req.getParameter("mode"); 
+		String pass = req.getParameter("pass");
+		
+		//ºñ¹Ğ¹øÈ£ È®ÀÎ (DAO¿¡ ÀÛ¾÷À» ½ÃÅ´) 
+		MVCBoardDAO dao = new MVCBoardDAO(); 
+		boolean confirmed = dao.confirmPassword(pass, idx);
+		dao.close();
+		
+		if (confirmed) {   //ºñ¹Ğ ¹øÈ£°¡ ÀÏÄ¡ÇÒ¶§ (modeº¯¼ö¸¦ È®ÀÎÇØ¼­, edit : ¼öÁ¤, delete:»èÁ¦ 
+			if (mode.equals("edit")) {  //¼öÁ¤ ÆäÀÌÁö
+				HttpSession session = req.getSession(); 
+				session.setAttribute("pass", pass); 		//pass¸¦ Session º¯¼ö¿¡ ÇÒ´ç.
+				resp.sendRedirect("../mvcboard/edit.do?idx=" + idx );
+				
+			}else if (mode.equals("delete")) { //»èÁ¦ ÆäÀÌÁö
+				dao = new MVCBoardDAO(); 
+				MVCBoardDTO dto = dao.selectView(idx); 
+				int result = dao.deletePost(idx);    //°Ô½Ã¹° »èÁ¦ 
+				dao.close(); 
+				
+				//°Ô½Ã¹° »èÁ¦½Ã Ã·ºÎ ÆÄÀÏµµ °°ÀÌ »èÁ¦   <<³ªÁß¿¡ Ãß°¡ÇÒ ºÎºĞ >> 
+				
+				//»èÁ¦ ÀÌÈÄ ÆäÀÌÁö ÀÌµ¿ (JavaScript )  : JSFunction.java
+				
+				JSFunction.alertLocation(resp, "»èÁ¦µÇ¾ú½À´Ï´Ù", "../mvcboard/list.do");
+			}
+			
+			
+		}else  {	//ºñ¹Ğ ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾ÊÀ»¶§  (Java Script½ÇÇà¼­ ÀÌÀüÆäÀÌÁö·Î µ¹¾Æ°¡µµ·Ï 
+				//ÀÌÀü ÆäÀÌÁö·Î ÀÌµ¿ (JavaScript) 
+			JSFunction.alertBack(resp, "ºñ¹Ğ¹øÈ£ °ËÁõ¿¡ ½ÇÆĞÇß½À´Ï´Ù"); 
+		}
+		
+		
+		
+			
 	}
+	
+	
 
-	
-	
-	
 }

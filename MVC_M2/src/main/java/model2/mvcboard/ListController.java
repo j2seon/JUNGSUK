@@ -11,33 +11,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import utils.BoardPage;   //í˜ì´ì§• ì²˜ë¦¬í•˜ëŠ” ê°ì²´ 
+import utils.BoardPage;   //ÆäÀÌÂ¡ Ã³¸®ÇÏ´Â °´Ã¼ 
 
 public class ListController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Get ë°©ì‹ìœ¼ë¡œ ìš”ì²­ì´ ì™”ì„ë•Œ ì„œë²„ì—ì„œ ì²˜ë¦¬ 
+		// Get ¹æ½ÄÀ¸·Î ¿äÃ»ÀÌ ¿ÔÀ»¶§ ¼­¹ö¿¡¼­ Ã³¸® 
 		
-		//1. DAO ê°ì²´ ìƒì„± (Model : ë¹„ì¦ˆë‹ˆìŠ¤ ë¡œì§ ì²˜ë¦¬ ) 
+		//1. DAO °´Ã¼ »ı¼º (Model : ºñÁî´Ï½º ·ÎÁ÷ Ã³¸® ) 
 		MVCBoardDAO dao = new MVCBoardDAO(); 
 		
-		//2.ë·°ì— ì „ë‹¬í•  ë§¤ê°œë³€ìˆ˜ ì €ì¥ìš© ë§µ ìƒì„± (Key,Value) 
+		//2.ºä¿¡ Àü´ŞÇÒ ¸Å°³º¯¼ö ÀúÀå¿ë ¸Ê »ı¼º (Key,Value) 
 	
         Map<String, Object> map = new HashMap<String, Object>();
 
         String searchField = req.getParameter("searchField");
         String searchWord = req.getParameter("searchWord");
         if (searchWord != null) {
-            // ì¿¼ë¦¬ìŠ¤íŠ¸ë§ìœ¼ë¡œ ì „ë‹¬ë°›ì€ ë§¤ê°œë³€ìˆ˜ ì¤‘ ê²€ìƒ‰ì–´ê°€ ìˆë‹¤ë©´ mapì— ì €ì¥
+            // Äõ¸®½ºÆ®¸µÀ¸·Î Àü´Ş¹ŞÀº ¸Å°³º¯¼ö Áß °Ë»ö¾î°¡ ÀÖ´Ù¸é map¿¡ ÀúÀå
             map.put("searchField", searchField);
             map.put("searchWord", searchWord);
         }
-        int totalCount = dao.selectCount(map);  // ê²Œì‹œë¬¼ ê°œìˆ˜
+        int totalCount = dao.selectCount(map);  // °Ô½Ã¹° °³¼ö (°Ô½Ã¹°¿¡¼­ start, end) 
 		
-	/* í˜ì´ì§• ì²˜ë¦¬ ë¶€ë¶„ start */
+	/* ÆäÀÌÂ¡ Ã³¸® ºÎºĞ start */
 		
-			//web.xml ì— ì…‹íŒ…ëœ ë³€ìˆ˜ê°’ ë¶ˆëŸ¬ì˜¤ê¸° 
+			//web.xml ¿¡ ¼ÂÆÃµÈ º¯¼ö°ª ºÒ·¯¿À±â 
 		ServletContext application = getServletContext(); 
 		int pageSize = Integer.parseInt(application.getInitParameter("POSTS_PER_PAGE")); 
 		int blockPage = Integer.parseInt(application.getInitParameter("PAGES_PER_BLOCK"));
@@ -45,48 +45,49 @@ public class ListController extends HttpServlet {
 		//System.out.println(pageSize);
 		//System.out.println(blockPage);
 		
-		//í˜„ì¬ í˜ì´ì§€ í™•ì¸ 
+		//ÇöÀç ÆäÀÌÁö È®ÀÎ 
 		int pageNum = 1; 
 		String pageTemp = req.getParameter("pageNum");  
 		if (pageTemp != null && !pageTemp.equals("")) {
-			pageNum = Integer.parseInt(pageTemp); 	//  ê°’ì´ ë¹„ì–´ ìˆì§€ ì•Šì„ë•Œ ë„˜ì˜¤ë…¼ í˜ì´ì§€ ë³€ìˆ˜ë¥¼ ì •ìˆ˜ë¡œ ë³€í™˜í•´ì„œ ì €ì¥ 
+			pageNum = Integer.parseInt(pageTemp); 	//  °ªÀÌ ºñ¾î ÀÖÁö ¾ÊÀ»¶§ ³Ñ¿À³í ÆäÀÌÁö º¯¼ö¸¦ Á¤¼ö·Î º¯È¯ÇØ¼­ ÀúÀå 
 		}
 		
-		//ëª©ë¡ì— ì¶œë ¥í•  ê²Œì‹œë¬¼ ë²”ìœ„ ê³„ì‚° 
-		int start = (pageNum -1) * pageSize + 1 ;  //ì²« ê²Œì‹œë¬¼ ë²ˆí˜¸ 
-		int end = pageNum * pageSize;     //ë§ˆì§€ë§‰ ê²Œì‹œë¬¼ ë²ˆí˜¸ 
+		//¸ñ·Ï¿¡ Ãâ·ÂÇÒ °Ô½Ã¹° ¹üÀ§ °è»ê 
+		int start = (pageNum -1) * pageSize + 1 ;  //Ã¹ °Ô½Ã¹° ¹øÈ£ 
+		int end = pageNum * pageSize;     //¸¶Áö¸· °Ô½Ã¹° ¹øÈ£ 
 		
-		//ë·° í˜ì´ì§€ì— ê°’ì„ ë˜ì ¸ì¤Œ     
+		//ºä ÆäÀÌÁö¿¡ °ªÀ» ´øÁ®ÁÜ     
 		map.put("start", start); 
 		map.put("end", end);
 		
-		System.out.println(start);
-		System.out.println(end);
+		//System.out.println(start);
+		//System.out.println(end);
 		
 		
 		
-	/* í˜ì´ì§• ì²˜ë¦¬ ë¶€ë¶„ end */ 
+	/* ÆäÀÌÂ¡ Ã³¸® ºÎºĞ end */ 
 		
-	// ê²Œì‹œë¬¼ ëª©ë¡ì„ ë°›ì•„ì˜¤ê¸° (DAO ê°ì²´ì— ì‘ì—…ì„ ì „ë‹¬ )
-		//boardListsëŠ” DBì˜ ë ˆì½”ë“œë¥¼ ë‹´ì€ DTOê°ì²´(5ê°œ) ë¥¼ ë‹´ê³  ìˆë‹¤. 
+	// °Ô½Ã¹° ¸ñ·ÏÀ» ¹Ş¾Æ¿À±â (DAO °´Ã¼¿¡ ÀÛ¾÷À» Àü´Ş )
+		//boardLists´Â DBÀÇ ·¹ÄÚµå¸¦ ´ãÀº DTO°´Ã¼(5°³) ¸¦ ´ã°í ÀÖ´Ù. 
 	
-        List<MVCBoardDTO> boardLists = dao.selectListPage(map);  // ê²Œì‹œë¬¼ ëª©ë¡ ë°›ê¸°
-        dao.close(); // DB ì—°ê²° ë‹«ê¸°
+        List<MVCBoardDTO> boardLists = dao.selectListPage(map);  // °Ô½Ã¹° ¸ñ·Ï ¹Ş±â
+        dao.close(); // DB ¿¬°á ´İ±â
 	
-	//ë·°í˜ì´ì§€ì— ì „ë‹¬ í•  ë§¤ê°œë³€ìˆ˜ë“¤ì„ ì¶”ê°€ 
-        //utils.BoardPage : í˜ì´ì§• ì²˜ë¦¬í•˜ëŠ” í´ë˜ìŠ¤ pagingStr ë©”ì†Œë“œ : static ë©”ì†Œë“œ 
+	//ºäÆäÀÌÁö¿¡ Àü´Ş ÇÒ ¸Å°³º¯¼öµéÀ» Ãß°¡ 
+        //utils.BoardPage : ÆĞÀÌÂ¡ Ã³¸®ÇÏ´Â Å¬·¡½º, pagingStr ¸Ş¼Òµå : static ¸Ş¼Òµå
     String pagingImg = BoardPage.pagingStr(totalCount, pageSize,
-            blockPage, pageNum, "../mvcboard/list.do");  // ë°”ë¡œê°€ê¸° ì˜ì—­ HTML ë¬¸ìì—´
+            blockPage, pageNum, "../mvcboard/list.do");  // ¹Ù·Î°¡±â ¿µ¿ª HTML ¹®ÀÚ¿­
     
-    //view í˜ì´ì§€ë¡œ ë³€ìˆ˜ì˜ ê°’ì„ ì „ë‹¬í•˜ê¸° ìœ„í•´ì„œ!mapì— ê°’ì„ ë„£ì–´ì¤€ë‹¤.
+    //ViewÆäÀÌÁö·Î º¯¼öÀÇ °ªÀ» Àü´Ş 
+    
     map.put("pagingImg", pagingImg);
     map.put("totalCount", totalCount);
     map.put("pageSize", pageSize);
     map.put("pageNum", pageNum); 
 	
-	//ë·°í˜ì´ì§€ë¡œ ë°ì´í„° ì „ë‹¬, request ì˜ì—­ì— ì „ë‹¬í•  ë°ì´í„°ë¥¼ ì €ì¥í›„ List.jsp (ë·°í˜ì´ì§€) ë¡œ í¬ì›Œë“œ
+	//ºäÆäÀÌÁö·Î µ¥ÀÌÅÍ Àü´Ş, request ¿µ¿ª¿¡ Àü´ŞÇÒ µ¥ÀÌÅÍ¸¦ ÀúÀåÈÄ List.jsp (ºäÆäÀÌÁö) ·Î Æ÷¿öµå 
     
-    req.setAttribute("boardLists", boardLists); //DBì—ì„œ select í•œ ê²°ê³¼ ê°’ì˜ ë¦¬ìŠ¤íŠ¸(DTOë“¤ì´ ë“¤ì–´ìˆë‹¤.)
+    req.setAttribute("boardLists", boardLists);  //DataBase¿¡¼­ SelectÇÑ °á°ú°ª
     req.setAttribute("map", map);
     req.getRequestDispatcher("/mvcboard/List.jsp").forward(req, resp);
 	
@@ -96,7 +97,7 @@ public class ListController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Post  ë°©ì‹ìœ¼ë¡œ ìš”ì²­ì´ ì™”ì„ë•Œ ì„œë²„ì—ì„œ ì²˜ë¦¬ 
+		// Post  ¹æ½ÄÀ¸·Î ¿äÃ»ÀÌ ¿ÔÀ»¶§ ¼­¹ö¿¡¼­ Ã³¸® 
 	}
 	
 }
