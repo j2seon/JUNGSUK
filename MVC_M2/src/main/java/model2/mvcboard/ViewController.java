@@ -13,25 +13,25 @@ public class ViewController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//Get ¿äÃ»½Ã Ã³¸® ºí¶ô
-		//System.out.println("ViewController ÀÛµ¿ÀßµÊ (Get ¿äÃ» Ã³¸®)");
+		//Get ìš”ì²­ì‹œ ì²˜ë¦¬ ë¸”ë½
+		//System.out.println("ViewController ì‘ë™ì˜ë¨ (Get ìš”ì²­ ì²˜ë¦¬)");
 		
-		//°Ô½Ã¹° Á¤º¸ ºÒ·¯ ¿À±â ( 1. Á¶È¸¼ö Áõ°¡, 2.°Ô½Ã¹° Á¤º¸ °¡Á®¿À±â) 
+		//ê²Œì‹œë¬¼ ì •ë³´ ë¶ˆëŸ¬ ì˜¤ê¸° ( 1. ì¡°íšŒìˆ˜ ì¦ê°€, 2.ê²Œì‹œë¬¼ ì •ë³´ ê°€ì ¸ì˜¤ê¸°) 
 		MVCBoardDAO dao = new MVCBoardDAO(); 
 		
 		String idx = req.getParameter("idx"); 
 		
-		//Á¶È¸¼ö Áõ°¡ 
+		//ì¡°íšŒìˆ˜ ì¦ê°€ 
 		dao.updateVisitCount(idx); 
 		
-		//°Ô½Ã¹°ÀÇ ÀÚ¼¼ÇÑ Á¤º¸ °ª °¡Á®¿À±â
+		//ê²Œì‹œë¬¼ì˜ ìì„¸í•œ ì •ë³´ ê°’ ê°€ì ¸ì˜¤ê¸°
 		MVCBoardDTO dto = dao.selectView(idx); 
-		dao.close();   //°´Ã¼ ¹İ³³ 
+		dao.close();   //ê°ì²´ ë°˜ë‚© 
 		
-		//DataBase ÀÇ  content ÄÃ·³ÀÇ \r\n  <== <<Enter>>À» "<br /> ÅÂ±×·Î º¯È¯ 
+		//DataBase ì˜  content ì»¬ëŸ¼ì˜ \r\n  <== <<Enter>>ì„ "<br /> íƒœê·¸ë¡œ ë³€í™˜ 
 		dto.setContent(dto.getContent().replaceAll("\r\n", "<br/>"));
 		
-		//°Ô½Ã¹° (dto) °´Ã¼¸¦ viewÆäÀÌÁö·Î Àü´ŞÇÏ±â º¯¼ö °ª ÀúÀå 
+		//ê²Œì‹œë¬¼ (dto) ê°ì²´ë¥¼ viewí˜ì´ì§€ë¡œ ì „ë‹¬í•˜ê¸° ë³€ìˆ˜ ê°’ ì €ì¥ 
 		req.setAttribute("dto", dto); 
 		req.getRequestDispatcher("/mvcboard/View.jsp").forward(req, resp); 
 		
@@ -48,8 +48,8 @@ public class ViewController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Post ¿äÃ»½Ã Ã³¸® ºí¶ô
-		//System.out.println("ViewController ÀÛµ¿ÀßµÊ (Post ¿äÃ» Ã³¸®)");
+		// Post ìš”ì²­ì‹œ ì²˜ë¦¬ ë¸”ë½
+		//System.out.println("ViewController ì‘ë™ì˜ë¨ (Post ìš”ì²­ ì²˜ë¦¬)");
 	}
 	
 	

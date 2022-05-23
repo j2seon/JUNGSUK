@@ -8,16 +8,16 @@ import common.DBConnPool;
 
 public class MVCBoardDAO extends DBConnPool {
 	
-	//±âº» »ı¼ºÀÚ È£Ãâ½Ã ºÎ¸ğ Å¬·¡½º¸¦ È£Ãâ 
+	//ê¸°ë³¸ìƒì„±ì í˜¸ì¶œ ì‹œ ë¶€ëª¨í´ë˜ìŠ¤ë¥¼ í˜¸ì¶œ
 	public MVCBoardDAO () {
-		super(); 			//DBConnPool°´Ã¼ÀÇ ±âº» »ı¼ºÀÚ È£Ãâ , DBCP¿¡¼­ con °´Ã¼ È°¼ºÈ­
+		super(); 			//DBConnPoolê°ì²´ì˜ ê¸°ë³¸ ìƒì„±ì í˜¸ì¶œ, DBCPì—ì„œ con ê°ì²´ í™œì„±í™”
 	}
 	
-	//°Ë»ö Á¶°Ç¿¡ ¸Â´Â °Ô½Ã¹° °³¼ö¸¦ ¹İÈ¯ÇÕ´Ï´Ù. 
+	//ê²€ìƒ‰ì¡°ê±´ì— ë§ëŠ” ê²Œì‹œë¬¼ ê°œìˆ˜ë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
 	public int selectCount( Map<String, Object> map ) {
 		int totalCount = 0; 
-		String query = "SELECT COUNT(*) FROM mvcboard";    //·¹ÄÚµåÀÇ ÃÑ°¹¼ö ¹İÈ¯ ,  
-			if (map.get("searchWord") != null) {			// °Ë»ö±â´ÉÀ» »ç¿ëÇßÀ»½Ã where 
+		String query = "SELECT COUNT(*) FROM mvcboard";    //ë ˆì½”ë“œ ì´ê°¯ìˆ˜ ë°˜í™˜
+			if (map.get("searchWord") != null) {			//ê²€ìƒ‰ê¸°ëŠ¥ì„ ì‚¬ìš©í–ˆì„ ì‹œ where 
 				query += " Where " + map.get("searchField") + " " + "like '%" + map.get("searchWord") + "%'"; 
 			}
 		try {
@@ -27,7 +27,7 @@ public class MVCBoardDAO extends DBConnPool {
 			totalCount = rs.getInt(1); 
 			
 		} catch (Exception e) {
-			System.out.println("°Ô½Ã¹° Ä«¿îÆ®Áß ¿¹¿Ü ¹ß»ı");
+			System.out.println("ï¿½Ô½Ã¹ï¿½ Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½");
 			e.printStackTrace();
 		}
 					
@@ -37,8 +37,8 @@ public class MVCBoardDAO extends DBConnPool {
 	
 	
 	
-	//°Ë»ö Á¶°Ç¿¡ ¸Â´Â °Ô½Ã¹° ¸ñ·ÏÀ» ¹İÈ¯ÇÕ´Ï´Ù.
-		//DataBase¿¡¼­ Select ÇÑ °á°ú °ªÀ»  DTO¿¡ ´ã¾Æ¼­ ¸®ÅÏ ½ÃÄÑÁÜ.  
+	//ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½Â´ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Õ´Ï´ï¿½.
+		//DataBaseï¿½ï¿½ï¿½ï¿½ Select ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  DTOï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.  
     public List<MVCBoardDTO> selectListPage(Map<String,Object> map) {
         List<MVCBoardDTO> board = new Vector<MVCBoardDTO>();
         String query = " "
@@ -57,7 +57,7 @@ public class MVCBoardDAO extends DBConnPool {
                + " ) "
                + " WHERE rNum BETWEEN ? AND ?";
         
-        System.out.println(query);  //ÄÜ¼Ö¿¡ ÀüÃ¼ Äõ¸® Ãâ·Â 
+        System.out.println(query);  //ï¿½Ü¼Ö¿ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 
         try {
             psmt = con.prepareStatement(query);
@@ -83,7 +83,7 @@ public class MVCBoardDAO extends DBConnPool {
             }
         }
         catch (Exception e) {
-            System.out.println("°Ô½Ã¹° Á¶È¸ Áß ¿¹¿Ü ¹ß»ı");
+            System.out.println("ê²Œì‹œë¬¼ ì¹´ìš´íŠ¸ì¤‘ ì˜ˆì™¸ ë°œìƒ");
             e.printStackTrace();
         }
         return board;
@@ -92,8 +92,8 @@ public class MVCBoardDAO extends DBConnPool {
 	
 	
 	
-	//¸ñ·Ï »ó¼¼ °Ë»ö (Select ) : ÁÖ¾îÁø ÀÏ·Ã ¹øÈ£¿¡ ÇØ´ç ÇÏ´Â °ªÀ» DTO ¿¡ ´ã ¾Æ ¹İÈ¯ÇÕ´Ï´Ù. (ÇÑÆäÀÌÁö read)
-    //ViewController ¿äÃ»À» Ã³¸® 
+  //ê²€ìƒ‰ ì¡°ê±´ì— ë§ëŠ” ê²Œì‹œë¬¼ ëª©ë¡ì„ ë°˜í™˜í•©ë‹ˆë‹¤.
+  		//DataBaseì—ì„œ Select í•œ ê²°ê³¼ ê°’ì„  DTOì— ë‹´ì•„ì„œ ë¦¬í„´ ì‹œì¼œì¤Œ.  
     
     public MVCBoardDTO selectView(String idx) {
     	MVCBoardDTO dto = new MVCBoardDTO();
@@ -116,17 +116,23 @@ public class MVCBoardDAO extends DBConnPool {
     			dto.setPass(rs.getString(9));
     			dto.setVisitcount(rs.getInt(10));
     			
+    			
+    			System.out.println(rs.getString(1));
+    			System.out.println(rs.getString(2));
+    			System.out.println("===================================");
+    			System.out.println("DTOì—ì„œ ê°€ì ¸ì˜¨ ê°’(idx) : " + dto.getIdx());
+    			System.out.println("DTOì—ì„œ ê°€ì ¸ì˜¨ ê°’(name) : " + dto.getName());
     		}
     		
     	}catch (Exception e) {
-    		System.out.println("°Ô½Ã¹° »ó¼¼Á¤º¸ Ãâ·ÂÁß ¿¹¿Ü ¹ß»ı");
+    		System.out.println("ê²Œì‹œë¬¼ ì¡°íšŒ ì¤‘ ì˜ˆì™¸ ë°œìƒ");
     		e.printStackTrace();
     	}
     	
     	return dto; 
     }
     
-    //ÁÖ¾îÁø ÀÏ·Ã ¹øÈ£¿¡ ÇØ´çÇÏ´Â °Ô½Ã¹°ÀÇ Á¶È¸¼ö¸¦ 1 Áõ°¡ ½ÃÅ´. 
+    //ì£¼ì–´ì§„ ì¼ë ¨ ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ê²Œì‹œë¬¼ì˜ ì¡°íšŒìˆ˜ë¥¼ 1 ì¦ê°€ ì‹œí‚´. 
     public void updateVisitCount(String idx) {
     	String query = "UPDATE mvcboard SET "
     			+ " visitcount = visitcount + 1 "
@@ -139,7 +145,7 @@ public class MVCBoardDAO extends DBConnPool {
     		
     	}catch (Exception e) {
     		e.printStackTrace();
-    		System.out.println("°Ô½Ã¹° Á¶È¸¼ö Áõ°¡½Ã ¿¹¿Ü ¹ß»ı");
+    		System.out.println("ê²Œì‹œë¬¼ ì¡°íšŒìˆ˜ ì¦ê°€ì‹œ ì˜ˆì™¸ ë°œìƒ");
     	}    	
     }
     
@@ -148,7 +154,7 @@ public class MVCBoardDAO extends DBConnPool {
     
     
 	
-	//µ¥ÀÌÅÍ »ğÀÔ (Insert)
+	//ë°ì´í„° ì‚½ì… (Insert)
 	public int insertWrite (MVCBoardDTO dto) {
 		int result = 0 ; 
 		try {
@@ -157,7 +163,7 @@ public class MVCBoardDAO extends DBConnPool {
 					+ " VALUES ("
 					+ " seq_board_num.nextval, ?, ?, ?, ?, ?, ?)"; 
 			
-		psmt = con.prepareStatement(query);  //PareparedStatement °´Ã¼ »ı¼º 
+		psmt = con.prepareStatement(query);  //PareparedStatement ê°ì²´ ìƒì„± 
 		
 		psmt.setString(1, dto.getName());
 		psmt.setString(2, dto.getTitle());
@@ -166,18 +172,18 @@ public class MVCBoardDAO extends DBConnPool {
 		psmt.setString(5, dto.getSfile());
 		psmt.setString(6, dto.getPass());
 		
-		result = psmt.executeUpdate();  //insert°¡ ¼º°øÀÏ¶§ result > 0   //DB ¿¡ °ªÀ» ÀúÀå 
+		result = psmt.executeUpdate();  //insertê°€ ì„±ê³µì¼ë•Œ result > 0   //DB ì— ê°’ì„ ì €ì¥ 
 		
 		
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 			
-		return result; 		// result : Insert ¼º°ø½Ã > 0 , ½ÇÆĞ½Ã : 0 
+		return result; 		// result : Insert ì„±ê³µì‹œ > 0 , ì‹¤íŒ¨ì‹œ : 0 
 	}
 	
 	
-	//µ¥ÀÌÅÍ ¼öÁ¤ (Update)
+	//ë°ì´í„° ìˆ˜ì • (Update)
 	public int updatePost (MVCBoardDTO dto) {
 		int result = 0 ; 
 		
@@ -185,7 +191,7 @@ public class MVCBoardDAO extends DBConnPool {
 			String query =    "UPDATE mvcboard "
 							+ " SET title = ? , name = ?, content = ?, ofile = ?, sfile = ? "
 							+ " WHERE idx = ? and pass = ?"; 
-			//Äõ¸®¹® ÁØºñ 
+			//ì¿¼ë¦¬ë¬¸ ì¤€ë¹„ 
 			psmt = con.prepareStatement(query); 
 			
 			psmt.setString(1, dto.getTitle());
@@ -196,20 +202,20 @@ public class MVCBoardDAO extends DBConnPool {
 			psmt.setString(6, dto.getIdx());
 			psmt.setString(7, dto.getPass()); 
 			
-			result = psmt.executeUpdate();   //update¼º°ø½Ã result º¯¼öÀÇ °ªÀÌ > 0 	
+			result = psmt.executeUpdate();   //updateì„±ê³µì‹œ result ë³€ìˆ˜ì˜ ê°’ì´ > 0
 			
 			//System.out.println("result : " + result);
 					
 		}catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Update½Ã ¿¹¿Ü¹ß»ı");
+			System.out.println("Updateï¿½ï¿½ ï¿½ï¿½ï¿½Ü¹ß»ï¿½");
 		}
 				
-		return result ;   //result > 0 : ¼öÁ¤ ¼º°ø, result = 0 : ¼öÁ¤ ½ÇÆĞ 		
+		return result ;    //result > 0 : ìˆ˜ì • ì„±ê³µ, result = 0 : ìˆ˜ì • ì‹¤íŒ¨ 
 	}
 
 	
-	//µ¥ÀÌÅÍ »èÁ¦ (delete)
+	//ë°ì´í„° ì‚­ì œ (delete)
 	public int deletePost(String idx) {
 		int result = 0 ; 
 		
@@ -218,11 +224,11 @@ public class MVCBoardDAO extends DBConnPool {
 			psmt = con.prepareStatement(query); 
 			psmt.setString(1, idx);
 			
-			result = psmt.executeUpdate();  //result > 0 »èÁ¦ ¼º°ø, result = 0 : »èÁ¦ ½ÇÆĞ 
+			result = psmt.executeUpdate();  //result > 0 ì‚­ì œ ì„±ê³µ, result = 0 : ì‚­ì œ ì‹¤íŒ¨ 
 			
 		}catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("delete ½Ã ¿¹¿Ü ¹ß»ı ");
+			System.out.println("delete ì‹œ ì˜ˆì™¸ ë°œìƒ ");
 		}
 				
 		return result; 				
@@ -230,7 +236,7 @@ public class MVCBoardDAO extends DBConnPool {
 	
 	
 	
-	//´Ù¿î ·Îµå È½¼ö¸¦ Áõ°¡½ÃÅ°´Â ¸Ş¼Òµå 
+	//ë‹¤ìš´ ë¡œë“œ íšŸìˆ˜ë¥¼ ì¦ê°€ì‹œí‚¤ëŠ” ë©”ì†Œë“œ 
 	public void downCountPlus (String idx) {
 		String query = "UPDATE mvcboard SET downcount = downcount + 1 "
 					   + " WHERE idx = ?"; 
@@ -242,16 +248,16 @@ public class MVCBoardDAO extends DBConnPool {
 			
 		}catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("´Ù¿î·Îµå È½¼ö Áõ°¡½Ã ¿À·ù ¹ß»ı");
+			System.out.println("ë‹¤ìš´ë¡œë“œ íšŸìˆ˜ ì¦ê°€ì‹œ ì˜¤ë¥˜ ë°œìƒ");
 		}
 	}
 	
-	// ºñ¹Ğ¹øÈ£¸¦ È®ÀÎ ÇÏ´Â ¸Ş¼Òµå (ÀÔ·ÂÇÑ ºñ¹Ğ ¹øÈ£°¡ DataBase ÀÇ °ª°ú ÀÏÄ¡ÇÏ´ÂÁö È®ÀÎ 
+	// ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸ í•˜ëŠ” ë©”ì†Œë“œ (ì…ë ¥í•œ ë¹„ë°€ ë²ˆí˜¸ê°€ DataBase ì˜ ê°’ê³¼ ì¼ì¹˜í•˜ëŠ”ì§€ í™•ì¸ 
 	public boolean confirmPassword(String pass, String idx) {
 		boolean isCorr = true; 
 		try {
-				//COUNT(*) = 1 : ·¹ÄÚµå°¡ Á¸ÀçÇÏ¸é : client¿¡¼­ ³Ñ±ä pass , idx DB¿¡ Á¸Àç 
-				//COUNT(*) = 0 : ·¹ÄÚµå°¡ Á¸ÀçÇÏÁö ¾ÊÀ¸¸é client¿¡¼­ ³Ñ±ä °ªÀÌ DB¿¡ Á¸ÀçÇÏÁö ¾Ê´Â´Ù. 
+			//COUNT(*) = 1 : ë ˆì½”ë“œê°€ ì¡´ì¬í•˜ë©´ : clientì—ì„œ ë„˜ê¸´ pass , idx DBì— ì¡´ì¬ 
+			//COUNT(*) = 0 : ë ˆì½”ë“œê°€ ì¡´ì¬í•˜ì§€ ì•Šìœ¼ë©´ clientì—ì„œ ë„˜ê¸´ ê°’ì´ DBì— ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë‹¤. 
 			String query = "SELECT COUNT(*) FROM mvcboard WHERE pass = ? and idx = ?";
 			psmt = con.prepareStatement(query); 
 			psmt.setString(1, pass);
@@ -265,7 +271,7 @@ public class MVCBoardDAO extends DBConnPool {
 					
 		}catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("ºñ¹Ğ¹øÈ£ È®ÀÎ½Ã ¿¹¿Ü ¹ß»ı");
+			System.out.println("ë¹„ë°€ë²ˆí˜¸ í™•ì¸ì‹œ ì˜ˆì™¸ ë°œìƒ");
 		}		
 		return isCorr; 
 	}

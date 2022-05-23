@@ -1,7 +1,7 @@
 package model2.mvcboard;
 
 public class MVCBoardDTO {
-	//DBÀÇ ÄÃ·³ÀÇ °ªÀ» ÀúÀåÇÏ°í Àü¼ÛÇØ ÁÖ´Â ¿ªÈ°  
+	//DBì˜ ì»¬ëŸ¼ì˜ ê°’ì„ ì €ì¥í•˜ê³  ì „ì†¡í•´ì£¼ëŠ” ì—­í•  
 	
 	private String idx; 
 	private String name; 
@@ -14,7 +14,7 @@ public class MVCBoardDTO {
 	private String pass; 
 	private int visitcount;
 	
-	// getter, setter  »ı¼º
+	// getter, setter  ï¿½ï¿½ï¿½ï¿½
 	public String getIdx() {
 		return idx;
 	}

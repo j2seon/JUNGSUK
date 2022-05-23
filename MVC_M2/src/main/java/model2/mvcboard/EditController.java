@@ -23,11 +23,11 @@ public class EditController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//ºñ¹Ğ ¹øÈ£ °ËÁõÈÄ °ËÁõÀÌ ¿Ï·á µÇ¸é idx ¿¡ ÇØ´çÇÏ´Â ·¹ÄÚµå¸¦ dto¿¡ ´ã¾î¼­ Edit.jsp 
-		//Get¹æ½ÄÀ¸·Î ¿äÃ»À» ¹Ş¾Æ¼­ Å¬¶óÀÌ¾ğÆ®°¡ ³Ñ±â´Â º¯¼ö¸¦ ÇÒ´ç ¹Ş¾Æ¼­ ºä ÆäÀÌÁö·Î ³Ñ±è. 
+		//ë¹„ë°€ ë²ˆí˜¸ ê²€ì¦í›„ ê²€ì¦ì´ ì™„ë£Œ ë˜ë©´ idx ì— í•´ë‹¹í•˜ëŠ” ë ˆì½”ë“œë¥¼ dtoì— ë‹´ì–´ì„œ Edit.jsp 
+		//Getë°©ì‹ìœ¼ë¡œ ìš”ì²­ì„ ë°›ì•„ì„œ í´ë¼ì´ì–¸íŠ¸ê°€ ë„˜ê¸°ëŠ” ë³€ìˆ˜ë¥¼ í• ë‹¹ ë°›ì•„ì„œ ë·° í˜ì´ì§€ë¡œ ë„˜ê¹€. 
 		String idx = req.getParameter("idx");
 		MVCBoardDAO dao = new MVCBoardDAO (); 
-		MVCBoardDTO dto = dao.selectView(idx);    // idx¿¡ ÇØ´çÇÏ´Â ·¹ÄÚµå¸¦ ³Ñ°Ü ¹Ş¾Æ DTO¿¡ÀúÀå 
+		MVCBoardDTO dto = dao.selectView(idx);    // idxì— í•´ë‹¹í•˜ëŠ” ë ˆì½”ë“œë¥¼ ë„˜ê²¨ ë°›ì•„ DTOì—ì €ì¥ 
 		
 		System.out.println("idx : " + idx);
 		
@@ -39,30 +39,30 @@ public class EditController extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//Edit.jsp ¿¡¼­ ¼öÁ¤µÉ ³»¿ëÀ» ¹Ş¾î¼­ DB¿¡ Àû¿ë 
+		//Edit.jsp ì—ì„œ ìˆ˜ì •ë  ë‚´ìš©ì„ ë°›ì–´ì„œ DBì— ì ìš© 
 		
-		// 1. ÆÄÀÏ ¾÷·Îµå Ã³¸® 
-			//¾÷·Îµå µğ·ºÅä¸®ÀÇ ¹°¸®ÀûÀÎ °æ·Î¸¦ È®ÀÎ ÇØ¾ß ÇÑ´Ù.  (¼­¹öÀÇ ÆÄÀÏÀ» ¾÷·ÎµåÇÒ ¹°¸®ÀûÀÎ Àı´ë°æ·Î )
+		// 1. íŒŒì¼ ì—…ë¡œë“œ ì²˜ë¦¬ 
+			//ì—…ë¡œë“œ ë””ë ‰í† ë¦¬ì˜ ë¬¼ë¦¬ì ì¸ ê²½ë¡œë¥¼ í™•ì¸ í•´ì•¼ í•œë‹¤.  (ì„œë²„ì˜ íŒŒì¼ì„ ì—…ë¡œë“œí•  ë¬¼ë¦¬ì ì¸ ì ˆëŒ€ê²½ë¡œ )
 		String saveDirectory = req.getServletContext().getRealPath("/Uploads"); 
 		
-			//¾÷·Îµå ÇÒ ÆÄÀÏÀÇ ÃÖ´ë ¿ë·® È®ÀÎ (web.xml ÀÇ ¼³Á¤À» °¡Á®¿È: 1MB) 
+			//ì—…ë¡œë“œ í•  íŒŒì¼ì˜ ìµœëŒ€ ìš©ëŸ‰ í™•ì¸ (web.xml ì˜ ì„¤ì •ì„ ê°€ì ¸ì˜´: 1MB) 
 		ServletContext application = this.getServletContext();
 		int maxPostSize = Integer.parseInt(application.getInitParameter("maxPostSize"));
 		
-		//ÆÄÀÏ ¾÷·Îµå  <<³ªÁß¿¡ Ã³¸® >> 
+		//íŒŒì¼ ì—…ë¡œë“œ  <<ë‚˜ì¤‘ì— ì²˜ë¦¬ >> 
 		MultipartRequest mr = FileUtil.uploadFile(req, saveDirectory, maxPostSize); 
 		
 		if (mr == null) {
-			//ÆÄÀÏ ¾÷·Îµå ½ÇÆĞ 
-			JSFunction.alertBack(resp, "Ã·ºÎ ÆÄÀÏ ¿ë·®ÀÌ ÃÊ°ú µÇ¾ú½À´Ï´Ù. "); 
+			//íŒŒì¼ ì—…ë¡œë“œ ì‹¤íŒ¨ 
+			JSFunction.alertBack(resp, "ì²¨ë¶€ íŒŒì¼ ìš©ëŸ‰ì´ ì´ˆê³¼ ë˜ì—ˆìŠµë‹ˆë‹¤. "); 
 			return; 
 		}
 		
 		
 		
-		//2. ÆÄÀÏ ¾÷·Îµå ¿Ü Ã³¸® ========================================
-			//Request °´Ã¼°¡ ¾Æ´Ï¶ó MutipartRequest °´Ã¼¿¡¼­ FormÀÇ º¯¼ö °ªÀ» ¹Ş´Â´Ù. 
-			//¾÷·Îµå ¶óÀÌºê·¯¸® ¸¶´Ù formÀÇ º¯¼ö °ªÀ» ¹Ş´Â ¸Ş¼Òµå ÀÌ¸§ÀÌ ´Ù¸¦ ¼ö ÀÖ´Ù. 
+		//2. íŒŒì¼ ì—…ë¡œë“œ ì™¸ ì²˜ë¦¬ ========================================
+			//Request ê°ì²´ê°€ ì•„ë‹ˆë¼ MutipartRequest ê°ì²´ì—ì„œ Formì˜ ë³€ìˆ˜ ê°’ì„ ë°›ëŠ”ë‹¤. 
+			//ì—…ë¡œë“œ ë¼ì´ë¸ŒëŸ¬ë¦¬ ë§ˆë‹¤ formì˜ ë³€ìˆ˜ ê°’ì„ ë°›ëŠ” ë©”ì†Œë“œ ì´ë¦„ì´ ë‹¤ë¥¼ ìˆ˜ ìˆë‹¤. 
 		
 		String idx = mr.getParameter("idx"); 
 		String prevOfile = mr.getParameter("prevOfile"); 
@@ -72,11 +72,11 @@ public class EditController extends HttpServlet{
 		String title = mr.getParameter("title"); 
 		String content = mr.getParameter("content"); 
 	
-		//ºñ¹Ğ ¹øÈ£ : ´Â Session º¯¼ö¿¡ °ª¿¡¼­ °¡Á®¿Â´Ù. 
+		//ë¹„ë°€ ë²ˆí˜¸ : ëŠ” Session ë³€ìˆ˜ì— ê°’ì—ì„œ ê°€ì ¸ì˜¨ë‹¤. 
 		HttpSession session = req.getSession(); 
 		String pass = (String) session.getAttribute("pass"); 
 		
-		// DTO ¿¡ ³Ñ°Ü¹ŞÀº º¯¼ö °ªÀ» ÀúÀå  ( Client Form ===> DTO ===> DAO ¿¡ Àü´Ş ) 
+		// DTO ì— ë„˜ê²¨ë°›ì€ ë³€ìˆ˜ ê°’ì„ ì €ì¥  ( Client Form ===> DTO ===> DAO ì— ì „ë‹¬ ) 
 		MVCBoardDTO dto = new MVCBoardDTO(); 
 		dto.setIdx(idx); 
 		dto.setName(name); 
@@ -85,7 +85,7 @@ public class EditController extends HttpServlet{
 		dto.setPass(pass); 
 		
 		/*
-		System.out.println("=======DTO °´Á¦¿¡ ÀúÀåµÈ °ª ºÒ·¯¿À±â ==========");
+		System.out.println("=======DTO ê°ì œì— ì €ì¥ëœ ê°’ ë¶ˆëŸ¬ì˜¤ê¸° ==========");
 		System.out.println(dto.getIdx());
 		System.out.println(dto.getName());
 		System.out.println(dto.getTitle());
@@ -94,13 +94,13 @@ public class EditController extends HttpServlet{
 		
 		*/ 
 		
-		//dto °´Ã¼ÀÇ Ofile, Sfile Àº ¾÷·Îµå °æ·Î¿¡ ÇØ´ç ÆÄÀÏ¸íÀÌ Á¸ÀçÇÏ´Â °æ¿ì Ã³¸® 
+		//dto ê°ì²´ì˜ Ofile, Sfile ì€ ì—…ë¡œë“œ ê²½ë¡œì— í•´ë‹¹ íŒŒì¼ëª…ì´ ì¡´ì¬í•˜ëŠ” ê²½ìš° ì²˜ë¦¬ 
 		
-		//¿øº» ÆÄÀÏ¸í°ú ÀúÀåµÉ ÆÄÀÏ ÀÌ¸§ ¼³Á¤ 
+		//ì›ë³¸ íŒŒì¼ëª…ê³¼ ì €ì¥ë  íŒŒì¼ ì´ë¦„ ì„¤ì • 
 		String fileName = mr.getFilesystemName("ofile"); 
-		if (fileName != null) {   //Ã·ºÎ ÆÄÀÏÀÌ Uploads Æú´õ¿¡ Á¸ÀçÇÏ´Â °æ¿ì ÆÄÀÏ ÀÌ¸§À» ¼öÁ¤ÇØ¼­ ÀúÀå
-			//»õ·Î¿î ÆÄÀÏ¸í »ı¼º 
-			String now = new SimpleDateFormat("yyyyMMdd_HmsS").format(new Date()); //³¯Â¥
+		if (fileName != null) {   //ì²¨ë¶€ íŒŒì¼ì´ Uploads í´ë”ì— ì¡´ì¬í•˜ëŠ” ê²½ìš° íŒŒì¼ ì´ë¦„ì„ ìˆ˜ì •í•´ì„œ ì €ì¥
+			//ìƒˆë¡œìš´ íŒŒì¼ëª… ìƒì„± 
+			String now = new SimpleDateFormat("yyyyMMdd_HmsS").format(new Date()); //ë‚ ì§œ
 			String ext = fileName.substring(fileName.lastIndexOf(".")); 
 			String newFileName = now + ext; 
 			
@@ -108,21 +108,21 @@ public class EditController extends HttpServlet{
 			System.out.println("ext : " + ext);
 			System.out.println("newFileName" + newFileName);
 			
-			//ÆÄÀÏ¸í º¯°æ 
+			//íŒŒì¼ëª… ë³€ê²½ 
 			File oldFile = new File (saveDirectory + File.separator + fileName); 
 			File newFile = new File (saveDirectory + File.separator + newFileName); 
 			
 			oldFile.renameTo(newFile); 
 			
-			//º¯°æµÈ ³»¿ëÀ» DTO ¿¡ ÀúÀå 
+			//ë³€ê²½ëœ ë‚´ìš©ì„ DTO ì— ì €ì¥ 
 			
-			dto.setOfile(fileName); 		//¿øº» ÆÄÀÏ ÀÌ¸§
-			dto.setSfile(newFileName); 		//»õ·Î¿î ÆÄÀÏ ÀÌ¸§ (¼­¹ö¿¡ ÀúÀåµÉ ÆÄÀÏ ÀÌ¸§) 
+			dto.setOfile(fileName); 		//ì›ë³¸ íŒŒì¼ ì´ë¦„
+			dto.setSfile(newFileName); 		//ìƒˆë¡œìš´ íŒŒì¼ ì´ë¦„ (ì„œë²„ì— ì €ì¥ë  íŒŒì¼ ì´ë¦„) 
 			
-			//±âÁ¸ÀÇ ÆÄÀÏ »èÁ¦ 
+			//ê¸°ì¡´ì˜ íŒŒì¼ ì‚­ì œ 
 			FileUtil.deleteFile(req, "/Uploads", prevSfile); 			
 			
-		}else {   //Ã·ºÎ ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾ÊÀ¸¸é ±âÁ¸ÀÇ ÀÌ¸§ À¯Áö 
+		}else {   //ì²¨ë¶€ íŒŒì¼ì´ ì¡´ì¬í•˜ì§€ ì•Šìœ¼ë©´ ê¸°ì¡´ì˜ ì´ë¦„ ìœ ì§€ 
 			dto.setOfile(prevOfile); 
 			dto.setSfile(prevSfile); 		
 		}
@@ -130,19 +130,19 @@ public class EditController extends HttpServlet{
 		
 		
 		
-		//DB¿¡ ¼öÁ¤ ³»¿ëÀ» ¹İ¿µ.  (DTO ÀÇ ÀúÀåµÈ °ªÀ» DAOÀÇ ¸Ş¼ÒµåÀÇ ¸Å°³º¯¼ö·Î Àü´Ş ) 
+		//DBì— ìˆ˜ì • ë‚´ìš©ì„ ë°˜ì˜.  (DTO ì˜ ì €ì¥ëœ ê°’ì„ DAOì˜ ë©”ì†Œë“œì˜ ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ ) 
 		MVCBoardDAO dao = new MVCBoardDAO(); 
 		int result = dao.updatePost(dto);       
-			// result == 1 : update ¼º°ø, result == 0 : update ½ÇÆĞ 
+			// result == 1 : update ì„±ê³µ, result == 0 : update ì‹¤íŒ¨ 
 		dao.close(); 
 		
-		//¼öÁ¤ ¼º°ø vs ¼öÁ¤ ½ÇÆĞ 
-		if (result==1) { 	//¼º°ø
+		//ìˆ˜ì • ì„±ê³µ vs ìˆ˜ì • ì‹¤íŒ¨ 
+		if (result==1) { 	//ì„±ê³µ
 			session.removeAttribute("pass"); 
 			resp.sendRedirect("../mvcboard/view.do?idx=" + idx ); 
 			
-		} else {			//½ÇÆĞ
-			JSFunction.alertLocation(resp, "ºñ¹Ğ¹øÈ£ °ËÁõÀ» ´Ù½Ã ÁøÇàÇØ ÁÖ¼¼¿ä",
+		} else {			//ì‹¤íŒ¨
+			JSFunction.alertLocation(resp, "ë¹„ë°€ë²ˆí˜¸ ê²€ì¦ì„ ë‹¤ì‹œ ì§„í–‰í•´ ì£¼ì„¸ìš”",
 					"../mvcboard/view.do?idx=" + idx); 			
 			
 		}

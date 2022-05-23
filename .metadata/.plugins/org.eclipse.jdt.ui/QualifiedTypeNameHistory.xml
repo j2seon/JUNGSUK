@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="chap7.Card"/>
-    <fullyQualifiedTypeName name="chap7.Deck"/>
-    <fullyQualifiedTypeName name="chap7.Exercise7_1_1.Deck"/>
-    <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
-    <fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
-    <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
     <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
@@ -29,7 +21,6 @@
     <fullyQualifiedTypeName name="javax.naming.Context"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="org.apache.catalina.Context"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="common.DBCConnPoll"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="org.apache.tomcat.util.net.ApplicationBufferHandler"/>
@@ -42,22 +33,31 @@
     <fullyQualifiedTypeName name="oracle.net.aso.s"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
-    <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
-    <fullyQualifiedTypeName name="org.apache.tomcat.util.http.fileupload.FileUtils"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="java.io.OutputStream"/>
-    <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
     <fullyQualifiedTypeName name="fileupdload.FileUtil"/>
+    <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.util.http.fileupload.FileUtils"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+    <fullyQualifiedTypeName name="utils.JSFunction"/>
     <fullyQualifiedTypeName name="model2.mvcboard.MVCBoardDTO"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="fileupload.FileUtil"/>
     <fullyQualifiedTypeName name="model2.mvcboard.MVCBoardDAO"/>
-    <fullyQualifiedTypeName name="utils.JSFunction"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="common.DBConnPool"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="ex01.MemberDAO"/>
+    <fullyQualifiedTypeName name="ex01.MemberDTO"/>
 </qualifiedTypeNameHistroy>

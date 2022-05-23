@@ -16,14 +16,14 @@ public class PassController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Get ¿äÃ»½Ã Ã³¸®
+		// Get ìš”ì²­ì‹œ ì²˜ë¦¬
 		/*
-		System.out.println("PassController Á¤»óÀÛµ¿ ");
+		System.out.println("PassController ì •ìƒì‘ë™ ");
 		String mode = req.getParameter("mode"); 
-		System.out.println( "mode º¯¼öÀÇ °ª : " + mode);
+		System.out.println( "mode ë³€ìˆ˜ì˜ ê°’ : " + mode);
 		*/
 		
-		//mode : edit <== ±Û¼öÁ¤,   mode : delete <== ±Û»èÁ¦ 
+		//mode : edit <== ê¸€ìˆ˜ì •,   mode : delete <== ê¸€ì‚­ì œ 
 		req.setAttribute("mode", req.getParameter("mode"));
 		req.getRequestDispatcher("/mvcboard/Pass.jsp").forward(req, resp);
 		
@@ -31,41 +31,41 @@ public class PassController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Post ¿äÃ»½Ã Ã³¸® 
+		// Post ìš”ì²­ì‹œ ì²˜ë¦¬ 
 		
-		//pass.jsp (ºä) ¿¡¼­ Àü¼ÛÇÑ º¯¼ö 3°³ 
+		//pass.jsp (ë·°) ì—ì„œ ì „ì†¡í•œ ë³€ìˆ˜ 3ê°œ 
 		String idx = req.getParameter("idx"); 
 		String mode = req.getParameter("mode"); 
 		String pass = req.getParameter("pass");
 		
-		//ºñ¹Ğ¹øÈ£ È®ÀÎ (DAO¿¡ ÀÛ¾÷À» ½ÃÅ´) 
+		//ë¹„ë°€ë²ˆí˜¸ í™•ì¸ (DAOì— ì‘ì—…ì„ ì‹œí‚´) 
 		MVCBoardDAO dao = new MVCBoardDAO(); 
 		boolean confirmed = dao.confirmPassword(pass, idx);
 		dao.close();
 		
-		if (confirmed) {   //ºñ¹Ğ ¹øÈ£°¡ ÀÏÄ¡ÇÒ¶§ (modeº¯¼ö¸¦ È®ÀÎÇØ¼­, edit : ¼öÁ¤, delete:»èÁ¦ 
-			if (mode.equals("edit")) {  //¼öÁ¤ ÆäÀÌÁö
+		if (confirmed) {   //ë¹„ë°€ ë²ˆí˜¸ê°€ ì¼ì¹˜í• ë•Œ (modeë³€ìˆ˜ë¥¼ í™•ì¸í•´ì„œ, edit : ìˆ˜ì •, delete:ì‚­ì œ 
+			if (mode.equals("edit")) {  //ìˆ˜ì • í˜ì´ì§€
 				HttpSession session = req.getSession(); 
-				session.setAttribute("pass", pass); 		//pass¸¦ Session º¯¼ö¿¡ ÇÒ´ç.
+				session.setAttribute("pass", pass); 		//passë¥¼ Session ë³€ìˆ˜ì— í• ë‹¹.
 				resp.sendRedirect("../mvcboard/edit.do?idx=" + idx );
 				
-			}else if (mode.equals("delete")) { //»èÁ¦ ÆäÀÌÁö
+			}else if (mode.equals("delete")) { //ì‚­ì œ í˜ì´ì§€
 				dao = new MVCBoardDAO(); 
 				MVCBoardDTO dto = dao.selectView(idx); 
-				int result = dao.deletePost(idx);    //°Ô½Ã¹° »èÁ¦ 
+				int result = dao.deletePost(idx);    //ê²Œì‹œë¬¼ ì‚­ì œ 
 				dao.close(); 
 				
-				//°Ô½Ã¹° »èÁ¦½Ã Ã·ºÎ ÆÄÀÏµµ °°ÀÌ »èÁ¦   <<³ªÁß¿¡ Ãß°¡ÇÒ ºÎºĞ >> 
+				//ê²Œì‹œë¬¼ ì‚­ì œì‹œ ì²¨ë¶€ íŒŒì¼ë„ ê°™ì´ ì‚­ì œ   <<ë‚˜ì¤‘ì— ì¶”ê°€í•  ë¶€ë¶„ >> 
 				
-				//»èÁ¦ ÀÌÈÄ ÆäÀÌÁö ÀÌµ¿ (JavaScript )  : JSFunction.java
+				//ì‚­ì œ ì´í›„ í˜ì´ì§€ ì´ë™ (JavaScript )  : JSFunction.java
 				
-				JSFunction.alertLocation(resp, "»èÁ¦µÇ¾ú½À´Ï´Ù", "../mvcboard/list.do");
+				JSFunction.alertLocation(resp, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤", "../mvcboard/list.do");
 			}
 			
 			
-		}else  {	//ºñ¹Ğ ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾ÊÀ»¶§  (Java Script½ÇÇà¼­ ÀÌÀüÆäÀÌÁö·Î µ¹¾Æ°¡µµ·Ï 
-				//ÀÌÀü ÆäÀÌÁö·Î ÀÌµ¿ (JavaScript) 
-			JSFunction.alertBack(resp, "ºñ¹Ğ¹øÈ£ °ËÁõ¿¡ ½ÇÆĞÇß½À´Ï´Ù"); 
+		}else  {	//ë¹„ë°€ ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•Šì„ë•Œ  (Java Scriptì‹¤í–‰ì„œ ì´ì „í˜ì´ì§€ë¡œ ëŒì•„ê°€ë„ë¡ 
+				//ì´ì „ í˜ì´ì§€ë¡œ ì´ë™ (JavaScript) 
+			JSFunction.alertBack(resp, "ë¹„ë°€ë²ˆí˜¸ ê²€ì¦ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤"); 
 		}
 		
 		
