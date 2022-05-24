@@ -1,0 +1,43 @@
+package sec02.ex04;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/first004") //dispatcher를 사용한 페이지 이동
+public class FirstServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//
+		System.out.println("요청확인됨");
+		resp.setContentType("text/html;charset=utf-8");
+		
+		PrintWriter out = resp.getWriter();
+		
+		//resp.addHeader("Refresh","5;url=second02");//서블릿을 요청시 다른 서블릿으로 이동 
+		//resp.addHeader("Refresh","5;url=index.jsp");
+		//resp.sendRedirect("index.jsp"); //jsp페이지로
+		
+		//out.print("<script type = 'text/javascript'>");
+		//out.print("location.href='second03';");
+		//out.print("location.href='index.jsp';");
+		//out.print("</script>");
+		
+		//url의 주소가 바뀌지 않는다 서버에서 처리하기 때문에 
+		RequestDispatcher dis = req.getRequestDispatcher("second004?name=park&pwd=1111");
+//		RequestDispatcher dis = req.getRequestDispatcher("index.jsp");
+		dis.forward(req, resp);
+		
+	}
+
+	
+	
+	
+}

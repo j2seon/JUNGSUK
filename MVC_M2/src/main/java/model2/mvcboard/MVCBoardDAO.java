@@ -27,7 +27,7 @@ public class MVCBoardDAO extends DBConnPool {
 			totalCount = rs.getInt(1); 
 			
 		} catch (Exception e) {
-			System.out.println("�Խù� ī��Ʈ�� ���� �߻�");
+			System.out.println("게시물 카운트중 예외 발생");
 			e.printStackTrace();
 		}
 					
@@ -37,8 +37,8 @@ public class MVCBoardDAO extends DBConnPool {
 	
 	
 	
-	//�˻� ���ǿ� �´� �Խù� ����� ��ȯ�մϴ�.
-		//DataBase���� Select �� ��� ����  DTO�� ��Ƽ� ���� ������.  
+	//검색 조건에 맞는 게시물 목록을 반환합니다.
+			//DataBase에서 Select 한 결과 값을  DTO에 담아서 리턴 시켜줌. 
     public List<MVCBoardDTO> selectListPage(Map<String,Object> map) {
         List<MVCBoardDTO> board = new Vector<MVCBoardDTO>();
         String query = " "
