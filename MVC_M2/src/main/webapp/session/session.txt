@@ -1,0 +1,13 @@
+
+Session 시간 설정(톰캣의 기본 세션 유지 시잔 : 30분 )
+
+1. web.xml (분) >> 전역 셋팅(모든사용자에게 기본으로 세팅)
+
+ <session-config>
+  	<session-timeout>20</session-timeout>
+  </session-config>
+
+2. session.setMaxInactiveInterval(초) >> 특정사용자마다 세션유지기간을 다르게 설정
+
+
+

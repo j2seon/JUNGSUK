@@ -1,0 +1,6 @@
+
+
+1. 세션을 처리하는 테이블 생성 (member) :ID, Password
+2. DTO 생성 -- membership.MemberDTO
+3. DAO 생성 -- membership.MemberDAO
+4. view 페이지 생성
