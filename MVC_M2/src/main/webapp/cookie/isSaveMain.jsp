@@ -22,7 +22,7 @@
 
 
 	<h2>로그인 페이지</h2>
-	<form action="IsSaveProcess.jsp" method-"post">
+	<form action="IsSaveProcess.jsp" method="post">
 		<p>아이디 : <input type="text" name="user_id" value="<%= loginId %>">
 			<input type="checkbox" name="save_check" value="Y" <%= cookieCheck %>> 
 		<p> 패스워드 : <input type="password" name ="user_pw">

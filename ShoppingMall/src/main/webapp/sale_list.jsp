@@ -13,7 +13,8 @@
 <BODY>
 
 <!-- DB 연결 설정 --> 
-<%@ include file = "dbconn_mysql.jsp" %>
+<!-- <//%@ include file = "dbconn_mysql.jsp" %> -->
+<%@ include file = "dbconn_oracle.jsp" %>
 
 
 <P align=center>
@@ -131,7 +132,6 @@
   out.println("</TABLE>");
   st.close();
   conn.close();
- 
   out.print("[<A href=\"shop_list.jsp?go="+ where);
   out.print("&cat="+ ca +"&pname="+pn+"\">계속 쇼핑하기</A>]");
  

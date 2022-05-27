@@ -18,7 +18,7 @@ if(chkVal != null && chkVal.equals("1")){
 	cookie.setPath(request.getContextPath()); //경로설정.(/MVC_M2)
 	cookie.setMaxAge(60*60*24); //쿠키가 저장되는 기간 : 하루
 	response.addCookie(cookie); //client hDD에 저장
-	out.println("쿠키: 하루동안 열리지 않음(쿠키저장성공')");
+	out.println("쿠키: 하루동안 열리지 않음(쿠키저장성공)");
 }
 
 
